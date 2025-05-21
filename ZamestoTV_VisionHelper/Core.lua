@@ -103,6 +103,7 @@ CRYSTALS = {0, 0, 0, 0, 0}
 CHESTS = {0, 0, 0, 0, 0}
 CHESTS_IN_ZONE = {3, 2, 2, 2, 2}
 ZONE = 'SW'
+forceHidden = false
 
 movable = false
 SLASH_ZSTORM1 = "/zstorm"
@@ -348,7 +349,7 @@ end
 
 function events:ZONE_CHANGED_INDOORS()
     local zone = GetMinimapZoneText()
-    if IsRunning() == false then
+    if IsRunning() == false and not forceHidden then
         if zone == "Vision of Orgrimmar" then
             ShowF()
             ZONE = 'OG'
@@ -376,7 +377,7 @@ function OnUpdateFunction(self, deltaTime)
         if zone == "Chamber of Heart" then
             HideF()
         end
-    else
+    elseif not forceHidden then
         if zone == "Vision of Stormwind" then
             ShowF()
             ZONE = 'SW'
@@ -401,6 +402,7 @@ end
 
 function setStormwind(msg, editBox)
     ZONE = 'SW'
+    forceHidden = false
     ShowF()
     CRYSTALS = {0, 0, 0, 0, 0}
     CHESTS = {0, 0, 0, 0, 0}
@@ -409,6 +411,7 @@ SlashCmdList["ZSTORM"] = setStormwind
 
 function setOrgrimmar(msg, editBox)
     ZONE = 'OG'
+    forceHidden = false
     ShowF()
     CRYSTALS = {0, 0, 0, 0, 0}
     CHESTS = {0, 0, 0, 0, 0}
@@ -416,6 +419,7 @@ end
 SlashCmdList["ZORGRI"] = setOrgrimmar
 
 function hideCrystalCounter(msg, editBox)
+    forceHidden = true
     HideF()
 end
 SlashCmdList["ZHIDE"] = hideCrystalCounter

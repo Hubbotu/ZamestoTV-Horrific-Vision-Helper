@@ -5,7 +5,7 @@
 ## Notes-ruRU: Незаменимый помощник по видениям
 ## Author: ZamestoTV
 ## IconTexture: Interface\AddOns\ZamestoTV_VisionHelper\Icons\goblin
-## Version: 3.2
+## Version: 3.2.2
 ## SavedVariables: HVTDB
 ## SavedVariablesPerCharacter: TrakPos
 ## DefaultState: enabled
