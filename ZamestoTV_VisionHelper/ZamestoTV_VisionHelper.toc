@@ -1,0 +1,35 @@
+## Interface: 110105
+## Title: Horrific Vision Helper
+## Title-ruRU: Помощник по Видениям
+## Notes: An indispensable assistant for visions
+## Notes-ruRU: Незаменимый помощник по видениям
+## Author: ZamestoTV
+## IconTexture: Interface\AddOns\ZamestoTV_VisionHelper\Icons\goblin
+## Version: 3.2
+## SavedVariables: HVTDB
+## SavedVariablesPerCharacter: TrakPos
+## DefaultState: enabled
+## X-Category: Map
+## RequiredDeps: HandyNotes
+## OptionalDeps: 
+## DefaultState: Enabled
+## LoadOnDemand: 0
+
+## Category-enUS: Addons ZamestoTV
+## Category-ruRU: Аддоны ZamestoTV
+
+#@no-lib-strip@
+embeds.xml
+#@end-no-lib-strip@
+
+Localization/ruRU.lua
+Localization/enUS.lua
+
+handler.lua
+config.lua
+VisionMap.lua
+Vision.lua
+Core.lua
+Auto.lua
+
+
