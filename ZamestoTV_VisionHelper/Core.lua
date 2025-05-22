@@ -100,9 +100,9 @@ TEXT_COLORS = {
 }
 
 SIZES = {
-    18, -- In different
-    24, -- In none
-    30  -- In
+    9,  -- In different
+    12, -- In none
+    15  -- In
 }
 TXT_FRAMES = nil
 
@@ -126,7 +126,7 @@ SLASH_ZCOMM1 = "/zcomm"
 local function CreateUI()
     -- Create the main frame
     CVT_Frame = CreateFrame("Frame", "CVT_Frame", UIParent, "BackdropTemplate")
-    CVT_Frame:SetSize(455, 210)
+    CVT_Frame:SetSize(280, 170)
     CVT_Frame:SetPoint("LEFT")
     CVT_Frame:SetMovable(false)
     CVT_Frame:EnableMouse(true)
@@ -152,7 +152,7 @@ local function CreateUI()
     TXT_FRAMES = {}
     for i = 1, 5 do
         local fs = CVT_Frame:CreateFontString("TXT" .. i, "OVERLAY")
-        fs:SetFont("Fonts\\ARIALN.TTF", 30)
+        fs:SetFont("Fonts\\ARIALN.TTF", 15)
         fs:SetJustifyH("LEFT")
         fs:SetJustifyV("TOP")
         fs:SetTextColor(1, 0, 0, 1) -- Default red color

@@ -3,9 +3,8 @@ local HVT = addon
 
 -- Frame creation
 HVT.frame = CreateFrame("Frame", "HorrificVisionsTrackerFrame", UIParent)
-HVT.frame:SetPoint("CENTER", UIParent, "CENTER", -89.65, -150.67)
+HVT.frame:SetPoint("CENTER", UIParent, "CENTER", -200, -300) -- Moved further from center
 HVT.frame:SetSize(600, 400)
-HVT.frame:SetClampedToScreen(true)
 HVT.frame:SetMovable(true)
 HVT.frame:SetFrameStrata("HIGH") -- Ensure frame is not obscured
 HVT.frame:Hide() -- Hide by default
@@ -452,11 +451,11 @@ SlashCmdList["HVT"] = function(msg)
     msg = msg:lower()
     if msg == "reset" then
         HVT.frame:ClearAllPoints()
-        HVT.frame:SetPoint("CENTER", UIParent, "CENTER", -89.65, -150.67)
+        HVT.frame:SetPoint("CENTER", UIParent, "CENTER", -200, -300) -- Updated reset position
         HVTDB.point = "CENTER"
         HVTDB.relativePoint = "CENTER"
-        HVTDB.xOfs = -89.65
-        HVTDB.yOfs = -150.67
+        HVTDB.xOfs = -200
+        HVTDB.yOfs = -300
         print("Horrific Visions Tracker: Frame position reset to default.")
     elseif msg == "" then
         -- Toggle frame visibility
