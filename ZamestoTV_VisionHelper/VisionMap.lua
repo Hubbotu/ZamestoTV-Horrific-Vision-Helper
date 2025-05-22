@@ -9,10 +9,6 @@ local path_meta = {
         scale = 1.1,
     }
 }
-print("Valor da variável 1:", L)
-print("Valor da variável 2:", myname)
-print("Valor da variável 3:", L["Anvil"])
-print("Valor da variável 3:", LibStub("AceLocale-3.0"):GetLocale(myname, false))
 
 ns.map_spellids = {
     -- [2404] = 0, -- Vision of Stormwind
