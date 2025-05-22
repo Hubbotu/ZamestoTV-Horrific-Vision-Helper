@@ -12,6 +12,18 @@ if GetLocale() == "ruRU" then
     L["Champion"] = "Защитник"
     L["Hero"] = "Герой"
     L["Myth"] = "Легенда"
+elseif GetLocale() == "ptBR" then
+    L["Valorstones"] = "Pedras da Bravura"
+    L["Weathered"] = "Desgastado"
+    L["Carved"] = "Entalhado"
+    L["Runed"] = "Rúnico"
+    L["Gilded"] = "Dourado"
+    L["Explorer"] = "Explorador"
+    L["Adventurer"] = "Aventureiro"
+    L["Veteran"] = "Veterano"
+    L["Champion"] = "Campeão"
+    L["Hero"] = "Herói"
+    L["Myth"] = "Mito"
 else -- Default to enUS
     L["Valorstones"] = "Valorstones"
     L["Weathered"] = "Weathered"
@@ -131,6 +143,8 @@ local function GetRankInfoByLocale(text, locale)
     if locale == "ruRU" or locale == "koKR" then
         _, tier, current, total = text:match(localePatterns[locale])
     elseif locale == "zhCN" or locale == "zhTW" then
+        tier, current, total = text:match(localePatterns[locale])
+    elseif locale == "ptBR" then
         tier, current, total = text:match(localePatterns[locale])
     else
         tier, current, total = text:match(localePatterns["enUS"])

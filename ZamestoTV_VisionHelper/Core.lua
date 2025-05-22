@@ -6,88 +6,97 @@ MAX_PICKING_DISTANCE = 0.8
 local L = {
     enUS = {
         TITLE = "Vision Tracker",
-        SW_LOCATIONS = {'Cathedral Square', 'Dwarven District', 'Old Town', 'Trade District', 'Mage Quarter'},
-        OG_LOCATIONS = {'Valley of Strength', 'Valley of Spirits', 'Valley of Wisdom', 'The Drag', 'Valley of Honor'},
-        HELP_TEXT = "/zstorm - Stormwind (resets counting)\n/zorgri - Orgrimmar (resets counting)\n/zmov - Toggle moving the frame\n/zhide - Hide stats"
+        SW_LOCATIONS = { 'Cathedral Square', 'Dwarven District', 'Old Town', 'Trade District', 'Mage Quarter' },
+        OG_LOCATIONS = { 'Valley of Strength', 'Valley of Spirits', 'Valley of Wisdom', 'The Drag', 'Valley of Honor' },
+        HELP_TEXT =
+        "/zstorm - Stormwind (resets counting)\n/zorgri - Orgrimmar (resets counting)\n/zmov - Toggle moving the frame\n/zhide - Hide stats"
     },
     ruRU = {
         TITLE = "Трекер видений",
-        SW_LOCATIONS = {'Соборная площадь', 'Квартал Дворфов', 'Старый город', 'Торговый квартал', 'Квартал магов'},
-        OG_LOCATIONS = {'Крепость Громмаш', 'Аллея Духов', 'Аллея Мудрости', 'Волок', 'Аллея Чести'},
-        HELP_TEXT = "/zstorm - Штормград (сбрасывает подсчет)\n/zorgri - Оргриммар (сбрасывает подсчет)\n/zmov - Переключить перемещение окна\n/zhide - Скрыть статистику"
+        SW_LOCATIONS = { 'Соборная площадь', 'Квартал Дворфов', 'Старый город', 'Торговый квартал', 'Квартал магов' },
+        OG_LOCATIONS = { 'Крепость Громмаш', 'Аллея Духов', 'Аллея Мудрости', 'Волок', 'Аллея Чести' },
+        HELP_TEXT =
+        "/zstorm - Штормград (сбрасывает подсчет)\n/zorgri - Оргриммар (сбрасывает подсчет)\n/zmov - Переключить перемещение окна\n/zhide - Скрыть статистику"
+    },
+    ptBR = {
+        TITLE = "Rastreador de Visão",
+        SW_LOCATIONS = { 'Praça da Catedral', 'Distrito dos Anões', 'Cidade Velha', 'Distrito Comercial', 'Distrito dos Magos' },
+        OG_LOCATIONS = { 'Vale da Força', 'Vale dos Espíritos', 'Vale da Sabedoria', 'O Bazar', 'Vale da Honra' },
+        HELP_TEXT =
+        "/zstorm - Ventobravo (reinicia a contagem)\n/zorgri - Orgrimmar (reinicia a contagem)\n/zmov - Alternar movimento do quadro\n/zhide - Ocultar estatísticas"
     }
 }
 
 -- Set the default language based on game client locale
-local lang = GetLocale() -- Automatically sets to enUS, ruRU, etc.
+local lang = GetLocale()              -- Automatically sets to enUS, ruRU, etc.
 if not L[lang] then lang = "enUS" end -- Fallback to enUS if locale unsupported
 
-STORMWIND_LOCATIONS = {'CATHEDRAL', 'DWARVEN', 'OLD TOWN', 'TRADE', 'MAGE'}
+STORMWIND_LOCATIONS = { 'CATHEDRAL', 'DWARVEN', 'OLD TOWN', 'TRADE', 'MAGE' }
 STORMWIND_POS = {
-    {1, {54.6, 59.4}},
-    {1, {53.0, 51.9}},
-    {1, {58.4, 55.1}},
-    {2, {64.6, 30.9}},
-    {2, {62.7, 37.0}},
-    {2, {63.4, 41.7}},
-    {2, {67.3, 44.7}},
-    {3, {75.6, 53.4}},
-    {3, {75.6, 64.6}},
-    {3, {74.6, 59.2}},
-    {3, {76.5, 68.5}},
-    {4, {69.0, 73.1}},
-    {4, {62.0, 76.9}},
-    {4, {66.1, 75.7}},
-    {4, {60.4, 68.8}},
-    {5, {47.4, 81.6}},
-    {5, {44.2, 87.9}},
-    {5, {47.7, 89.4}},
-    {5, {52.4, 83.4}}
+    { 1, { 54.6, 59.4 } },
+    { 1, { 53.0, 51.9 } },
+    { 1, { 58.4, 55.1 } },
+    { 2, { 64.6, 30.9 } },
+    { 2, { 62.7, 37.0 } },
+    { 2, { 63.4, 41.7 } },
+    { 2, { 67.3, 44.7 } },
+    { 3, { 75.6, 53.4 } },
+    { 3, { 75.6, 64.6 } },
+    { 3, { 74.6, 59.2 } },
+    { 3, { 76.5, 68.5 } },
+    { 4, { 69.0, 73.1 } },
+    { 4, { 62.0, 76.9 } },
+    { 4, { 66.1, 75.7 } },
+    { 4, { 60.4, 68.8 } },
+    { 5, { 47.4, 81.6 } },
+    { 5, { 44.2, 87.9 } },
+    { 5, { 47.7, 89.4 } },
+    { 5, { 52.4, 83.4 } }
 }
 
 STORMWIND_BOUNDRIES = {
-    {{42.4, 50.1}, {48, 63}, {50.7, 62.6}, {53.2, 61.2}, {55.0, 62.7}, {61.1, 55.1}, {59.6, 50.9}, {53.0, 38.1}},
-    {{57.5, 35.1}, {65.5, 50.7}, {72.4, 43.2}, {64.0, 25.0}},
-    {{74.6, 49.7}, {67.1, 58.3}, {75.7, 73.9}, {81.6, 67.0}, {81.6, 58.8}},
-    {{71.4, 73.3}, {63.5, 61.4}, {56.4, 68.2}, {62.8, 84.2}},
-    {{58.1, 83.3}, {53.0, 71.8}, {50.8, 74.1}, {47.5, 72.9}, {38.8, 79.2}, {47.1, 98.8}}
+    { { 42.4, 50.1 }, { 48, 63 },     { 50.7, 62.6 }, { 53.2, 61.2 }, { 55.0, 62.7 }, { 61.1, 55.1 }, { 59.6, 50.9 }, { 53.0, 38.1 } },
+    { { 57.5, 35.1 }, { 65.5, 50.7 }, { 72.4, 43.2 }, { 64.0, 25.0 } },
+    { { 74.6, 49.7 }, { 67.1, 58.3 }, { 75.7, 73.9 }, { 81.6, 67.0 }, { 81.6, 58.8 } },
+    { { 71.4, 73.3 }, { 63.5, 61.4 }, { 56.4, 68.2 }, { 62.8, 84.2 } },
+    { { 58.1, 83.3 }, { 53.0, 71.8 }, { 50.8, 74.1 }, { 47.5, 72.9 }, { 38.8, 79.2 }, { 47.1, 98.8 } }
 }
 
-ORGRIMMAR_LOCATIONS = {'VSTRENGTH', 'SPIRITS', 'WISDOM', 'DRAG', 'HONOR'}
+ORGRIMMAR_LOCATIONS = { 'VSTRENGTH', 'SPIRITS', 'WISDOM', 'DRAG', 'HONOR' }
 ORGRIMMAR_POS = {
-    {1, {53.5, 82.0}},
-    {1, {49.4, 68.7}},
-    {1, {48.7, 83.8}},
-    {2, {33.4, 65.7}},
-    {2, {35.4, 69.4}},
-    {2, {37.9, 84.5}},
-    {2, {38.5, 80.7}},
-    {3, {38.9, 49.9}},
-    {3, {41.7, 44.8}},
-    {3, {48.4, 44.1}},
-    {3, {51.0, 45.2}},
-    {4, {57.7, 65.1}},
-    {4, {57.6, 58.6}},
-    {4, {60.4, 55.1}},
-    {4, {57.9, 48.6}},
-    {5, {65.8, 50.6}},
-    {5, {68.2, 42.9}},
-    {5, {67.0, 37.4}},
-    {5, {63.9, 30.4}}
+    { 1, { 53.5, 82.0 } },
+    { 1, { 49.4, 68.7 } },
+    { 1, { 48.7, 83.8 } },
+    { 2, { 33.4, 65.7 } },
+    { 2, { 35.4, 69.4 } },
+    { 2, { 37.9, 84.5 } },
+    { 2, { 38.5, 80.7 } },
+    { 3, { 38.9, 49.9 } },
+    { 3, { 41.7, 44.8 } },
+    { 3, { 48.4, 44.1 } },
+    { 3, { 51.0, 45.2 } },
+    { 4, { 57.7, 65.1 } },
+    { 4, { 57.6, 58.6 } },
+    { 4, { 60.4, 55.1 } },
+    { 4, { 57.9, 48.6 } },
+    { 5, { 65.8, 50.6 } },
+    { 5, { 68.2, 42.9 } },
+    { 5, { 67.0, 37.4 } },
+    { 5, { 63.9, 30.4 } }
 }
 
 ORGRIMMAR_BOUNDRIES = {
-    {{43.2, 66.6}, {44.4, 87.2}, {57.0, 84.6}, {52.8, 67.4}, {50.2, 62.2}},
-    {{21.8, 63.2}, {37.4, 89.0}, {42.4, 78.8}, {33.8, 54.2}},
-    {{36.0, 40.0}, {36.4, 58.6}, {49.8, 57.0}, {51.5, 50.7}, {57.5, 42.1}},
-    {{51.2, 61.6}, {53.8, 67.0}, {58.1, 72.0}, {66.0, 58.4}, {58.8, 42.0}, {52.5, 50.7}},
-    {{59.2, 26.0}, {60.4, 43.4}, {67.4, 57.4}, {84.4, 40.0}, {72.6, 24.0}}
+    { { 43.2, 66.6 }, { 44.4, 87.2 }, { 57.0, 84.6 }, { 52.8, 67.4 }, { 50.2, 62.2 } },
+    { { 21.8, 63.2 }, { 37.4, 89.0 }, { 42.4, 78.8 }, { 33.8, 54.2 } },
+    { { 36.0, 40.0 }, { 36.4, 58.6 }, { 49.8, 57.0 }, { 51.5, 50.7 }, { 57.5, 42.1 } },
+    { { 51.2, 61.6 }, { 53.8, 67.0 }, { 58.1, 72.0 }, { 66.0, 58.4 }, { 58.8, 42.0 }, { 52.5, 50.7 } },
+    { { 59.2, 26.0 }, { 60.4, 43.4 }, { 67.4, 57.4 }, { 84.4, 40.0 }, { 72.6, 24.0 } }
 }
 
 TEXT_COLORS = {
-    {255, 0, 0},   -- 0
-    {200, 78, 8},  -- 1
-    {0, 255, 0}    -- 2
+    { 255, 0,   0 }, -- 0
+    { 200, 78,  8 }, -- 1
+    { 0,   255, 0 }  -- 2
 }
 
 SIZES = {
@@ -99,9 +108,9 @@ TXT_FRAMES = nil
 
 ---------------- Globals ----------------
 
-CRYSTALS = {0, 0, 0, 0, 0}
-CHESTS = {0, 0, 0, 0, 0}
-CHESTS_IN_ZONE = {3, 2, 2, 2, 2}
+CRYSTALS = { 0, 0, 0, 0, 0 }
+CHESTS = { 0, 0, 0, 0, 0 }
+CHESTS_IN_ZONE = { 3, 2, 2, 2, 2 }
 ZONE = 'SW'
 forceHidden = false
 
@@ -152,7 +161,7 @@ local function CreateUI()
         if i == 1 then
             fs:SetPoint("TOPLEFT", CVT_Frame, "TOPLEFT", 16, -30) -- Adjusted to fit below title
         else
-            fs:SetPoint("TOPLEFT", TXT_FRAMES[i-1], "BOTTOMLEFT", 0, -8)
+            fs:SetPoint("TOPLEFT", TXT_FRAMES[i - 1], "BOTTOMLEFT", 0, -8)
         end
         fs:SetText("") -- Initially empty
         TXT_FRAMES[i] = fs
@@ -283,7 +292,11 @@ function PrintOutputTexts()
     end
 
     for i = 1, 5 do
-        TXT_FRAMES[i]:SetText(ARR[i] .. ':  ' .. CRYSTALS[i] .. '/2 |TInterface\\ICONS\\inv_misc_gem_flamespessarite_02:14:14:0:0:16:16:0:16:0:16|t \| |TInterface\\ICONS\\inv_misc_treasurechest02d:14:14:0:0:16:16:0:16:0:16|t ' .. CHESTS[i] .. '/' .. CHESTS_IN_ZONE[i])
+        TXT_FRAMES[i]:SetText(ARR[i] ..
+            ':  ' ..
+            CRYSTALS[i] ..
+            '/2 |TInterface\\ICONS\\inv_misc_gem_flamespessarite_02:14:14:0:0:16:16:0:16:0:16|t \| |TInterface\\ICONS\\inv_misc_treasurechest02d:14:14:0:0:16:16:0:16:0:16|t ' ..
+            CHESTS[i] .. '/' .. CHESTS_IN_ZONE[i])
         if lastZoneId == 0 then
             TXT_FRAMES[i]:SetFont("Fonts\\ARIALN.TTF", SIZES[2])
         elseif lastZoneId == i then
@@ -293,7 +306,7 @@ function PrintOutputTexts()
         end
 
         local CL = TEXT_COLORS[CRYSTALS[i] + 1]
-        TXT_FRAMES[i]:SetTextColor(CL[1]/255, CL[2]/255, CL[3]/255)
+        TXT_FRAMES[i]:SetTextColor(CL[1] / 255, CL[2] / 255, CL[3] / 255)
     end
 end
 
@@ -330,7 +343,7 @@ function SavePosition()
         CreateUI()
     end
     local point, relativeTo, relativePoint, xOfs, yOfs = CVT_Frame:GetPoint(1)
-    TrakPos = {point, relativeTo and relativeTo:GetName(), relativePoint, xOfs, yOfs}
+    TrakPos = { point, relativeTo and relativeTo:GetName(), relativePoint, xOfs, yOfs }
     print("saved")
 end
 
@@ -353,13 +366,13 @@ function events:ZONE_CHANGED_INDOORS()
         if zone == "Vision of Orgrimmar" then
             ShowF()
             ZONE = 'OG'
-            CRYSTALS = {0, 0, 0, 0, 0}
-            CHESTS = {0, 0, 0, 0, 0}
+            CRYSTALS = { 0, 0, 0, 0, 0 }
+            CHESTS = { 0, 0, 0, 0, 0 }
         elseif zone == "Vision of Stormwind" then
             ShowF()
             ZONE = 'SW'
-            CRYSTALS = {0, 0, 0, 0, 0}
-            CHESTS = {0, 0, 0, 0, 0}
+            CRYSTALS = { 0, 0, 0, 0, 0 }
+            CHESTS = { 0, 0, 0, 0, 0 }
         end
     else
         if zone == "Chamber of Heart" then
@@ -381,13 +394,13 @@ function OnUpdateFunction(self, deltaTime)
         if zone == "Vision of Stormwind" then
             ShowF()
             ZONE = 'SW'
-            CRYSTALS = {0, 0, 0, 0, 0}
-            CHESTS = {0, 0, 0, 0, 0}
+            CRYSTALS = { 0, 0, 0, 0, 0 }
+            CHESTS = { 0, 0, 0, 0, 0 }
         elseif zone == "Vision of Orgrimmar" then
             ShowF()
             ZONE = 'OG'
-            CRYSTALS = {0, 0, 0, 0, 0}
-            CHESTS = {0, 0, 0, 0, 0}
+            CRYSTALS = { 0, 0, 0, 0, 0 }
+            CHESTS = { 0, 0, 0, 0, 0 }
         end
     end
 end
@@ -404,24 +417,27 @@ function setStormwind(msg, editBox)
     ZONE = 'SW'
     forceHidden = false
     ShowF()
-    CRYSTALS = {0, 0, 0, 0, 0}
-    CHESTS = {0, 0, 0, 0, 0}
+    CRYSTALS = { 0, 0, 0, 0, 0 }
+    CHESTS = { 0, 0, 0, 0, 0 }
 end
+
 SlashCmdList["ZSTORM"] = setStormwind
 
 function setOrgrimmar(msg, editBox)
     ZONE = 'OG'
     forceHidden = false
     ShowF()
-    CRYSTALS = {0, 0, 0, 0, 0}
-    CHESTS = {0, 0, 0, 0, 0}
+    CRYSTALS = { 0, 0, 0, 0, 0 }
+    CHESTS = { 0, 0, 0, 0, 0 }
 end
+
 SlashCmdList["ZORGRI"] = setOrgrimmar
 
 function hideCrystalCounter(msg, editBox)
     forceHidden = true
     HideF()
 end
+
 SlashCmdList["ZHIDE"] = hideCrystalCounter
 
 function movability(msg, editBox)
@@ -433,11 +449,13 @@ function movability(msg, editBox)
     CVT_Frame:EnableMouse(movable)
     print("Movable: " .. tostring(movable))
 end
+
 SlashCmdList["ZMOV"] = movability
 
 function helper(msg, editBox)
     print(L[lang].HELP_TEXT)
 end
+
 SlashCmdList["ZCOMM"] = helper
 
 ---------------- Initialization ----------------

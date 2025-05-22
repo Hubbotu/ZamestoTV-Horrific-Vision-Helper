@@ -10,6 +10,11 @@ GossipFrame:HookScript("OnShow", function()
                 "^Надеть безликую маску*",
                 "^Я помогу тебе. <Помочь Гароне подняться.>*"
             }
+        elseif locale == "ptBR" then
+                patterns = {
+                    "^Coloque a Máscara Sem Rosto*",
+                    "^Você tem minha ajuda%. <Ajude Garona a se levantar>*"
+                }
         else
             patterns = {
                 "^Put on the Faceless Mask*",

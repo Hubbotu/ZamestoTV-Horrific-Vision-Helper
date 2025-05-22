@@ -78,12 +78,18 @@ HVT.kind = HVT.locale == "zhCN" and {
     "|cffFFAA6CИсцеление|r",  -- Healing
     "|cff6CFFFDЗащита|r",     -- Defensive
     "|cffF0FF00Рассудок|r"    -- Sanity
+} or HVT.locale == "ptBR" and {
+    "|cff6A84BCVeneno|r", -- Poison
+    "|cffFF7373Sopro de fogo|r", -- Breath Fire
+    "|cffFFAA6CCura|r", -- Healing
+    "|cff6CFFFDDefensivo|r", -- Defensive
+    "|cffF0FF00Sanidade|r" -- Sanity
 } or {
-    "|cff6A84BCPoison|r",     -- Poison
-    "|cffFF7373Breath Fire|r",-- Breath Fire
-    "|cffFFAA6CHealing|r",    -- Healing
-    "|cff6CFFFDDefensive|r",  -- Defensive
-    "|cffF0FF00Sanity|r"      -- Sanity
+    "|cff6A84BCPoison|r", -- Poison
+    "|cffFF7373Breath Fire|r", -- Breath Fire
+    "|cffFFAA6CHealing|r", -- Healing
+    "|cff6CFFFDDefensive|r", -- Defensive
+    "|cffF0FF00Sanity|r" -- Sanity
 }
 HVT.colors = {
     ["Black"] = {0.42, 0.42, 0.42, 1},   -- Gray
@@ -106,6 +112,18 @@ HVT.strings = HVT.locale == "ruRU" and {
     ["Time left initial"] = "Оставшееся время: Н/Д",
     ["Sanity initial"] = "Рассудок: 0",
     ["Sanity loss from hits initial"] = "Потеря рассудка от ударов: 0"
+} or HVT.locale == "ptBR" and  {
+    ["Time left"] = "Tempo Restante: %s",
+    ["Sanity"] = "Sanidade: %d",
+    ["Sanity loss from hits"] = "Perda de sanidade por acertos: %d",
+    ["Black"] = "Preto",
+    ["Green"] = "Verde",
+    ["Red"] = "Vermelho",
+    ["Blue"] = "Azul",
+    ["Purple"] = "Roxo",
+    ["Time left initial"] = "Tempo restante: N/A",
+    ["Sanity initial"] = "Sanidade: 0",
+    ["Sanity loss from hits initial"] = "Perda de sanidade por acertos: 0"
 } or {
     ["Time left"] = "Time left: %s",
     ["Sanity"] = "Sanity: %d",

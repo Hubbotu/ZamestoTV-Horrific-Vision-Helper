@@ -1,8 +1,10 @@
 ## Interface: 110105
 ## Title: Horrific Vision Helper
 ## Title-ruRU: Помощник по Видениям
+## Title-ptBR: Horrific Vision Helper
 ## Notes: An indispensable assistant for visions
 ## Notes-ruRU: Незаменимый помощник по видениям
+## Notes-ptBR: Um assistente indispensável para visões
 ## Author: ZamestoTV
 ## IconTexture: Interface\AddOns\ZamestoTV_VisionHelper\Icons\goblin
 ## Version: 3.2.2
@@ -17,6 +19,7 @@
 
 ## Category-enUS: Addons ZamestoTV
 ## Category-ruRU: Аддоны ZamestoTV
+## Category-ptBR: Addons ZamestoTV
 
 #@no-lib-strip@
 embeds.xml
@@ -24,6 +27,7 @@ embeds.xml
 
 Localization/ruRU.lua
 Localization/enUS.lua
+Localization/ptBR.lua
 
 handler.lua
 config.lua
