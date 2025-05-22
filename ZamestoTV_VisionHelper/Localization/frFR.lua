@@ -28,24 +28,24 @@ L["Valley of Wisdom Elevator"] = "|cFFFFFFFFCoursier du vent marqué par le Vide
 L["Valley of Wisdom Elevator Note"] = "Complétez la zone située à la Vallée de la Sagesse. Vous devez avoir |cFF0070DDau moins 3 masques actifs|r. Prenez ensuite l'ascenseur jusqu'au dernier étage. |cFFa335eeCoursier du vent marqué par le Vide|r"
 
 -- Waypoints
-L["Create waypoint"] = true
-L["Create all waypoints"] = true
-L["Hide node"] = true
-L["Close"] = true
+L["Create waypoint"] = "Créer un point de passage"
+L["Create all waypoints"] = "Créer tous les points de passage"
+L["Hide node"] = "Cacher le point"
+L["Close"] = "Fermer"
 
 -- Options
-L["Icon settings"] = true
-L["These settings control the look of the icon."] = true
-L["Icon Scale"] = true
-L["The scale of the icons"] = true
-L["Icon Alpha"] = true
-L["The alpha transparency of the icons"] = true
-L["World Map"] = true
-L["Show icons on world map"] = true
-L["Minimap"] = true
-L["Show icons on the minimap"] = true
-L["What to display"] = true
+L["Icon settings"] = "Paramètres des icônes"
+L["These settings control the look of the icon."] = "Ces paramètres contrôlent l'aspect de l'icône."
+L["Icon Scale"] = "Échelle de l'icône"
+L["The scale of the icons"] = "L'échelle des icônes"
+L["Icon Alpha"] = "Opacité de l'icône"
+L["The alpha transparency of the icons"] = "La transparence des icônes"
+L["World Map"] = "Carte du monde"
+L["Show icons on world map"] = "Afficher les icônes sur la carte du monde"
+L["Minimap"] = "Minicarte"
+L["Show icons on the minimap"] = "Afficher les icônes sur la mini-carte"
+L["What to display"] = "Ce qu'il faut afficher"
 L["Show Zamros"] = "Afficher les emplacements de farm d'or"
 L["Show Zamros gold"] = "Afficher les points d'activité avec lesquels vous pouvez gagner de l'or"
-L["Reset hidden nodes"] = true
-L["Show all nodes that you manually hid by right-clicking on them and choosing \"hide\"."] = true
+L["Reset hidden nodes"] = "Réinitialiser les points cachés"
+L["Show all nodes that you manually hid by right-clicking on them and choosing \"hide\"."] = "Afficher tous les points que vous avez masqués manuellement en cliquant dessus avec le bouton droit de la souris et en choisissant \"cacher\"."
