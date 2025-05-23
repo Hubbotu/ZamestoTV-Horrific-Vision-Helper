@@ -108,6 +108,13 @@ ns.points = {
             note = L["Ripped Note Note"],
             pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj20.tga",
         }),
+        [65627159] = ({
+            label = L["Ripped Note"],
+            cont = true,
+            Zamro = true,
+            note = L["Ripped Note Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj20.tga",
+        }),		
     },
     [2403] = { -- Vision of Orgrimmar
         [70503320] = ({
