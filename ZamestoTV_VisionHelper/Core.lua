@@ -123,6 +123,7 @@ forceHidden = false
 movable = false
 frameScale = 1.0 -- Default frame scale
 fontSize = 15    -- Default font size
+isActivated = false -- Tracks if /zstorm or /zorgri has been called
 
 SLASH_ZSTORM1 = "/zstorm"
 SLASH_ZORGRI1 = "/zorgri"
@@ -375,22 +376,8 @@ end
 
 function events:ZONE_CHANGED_INDOORS()
     local zone = GetMinimapZoneText()
-    if IsRunning() == false and not forceHidden then
-        if zone == "Vision of Orgrimmar" then
-            ShowF()
-            ZONE = 'OG'
-            CRYSTALS = { 0, 0, 0, 0, 0 }
-            CHESTS = { 0, 0, 0, 0, 0 }
-        elseif zone == "Vision of Stormwind" then
-            ShowF()
-            ZONE = 'SW'
-            CRYSTALS = { 0, 0, 0, 0, 0 }
-            CHESTS = { 0, 0, 0, 0, 0 }
-        end
-    else
-        if zone == "Chamber of Heart" then
-            HideF()
-        end
+    if IsRunning() and zone == "Chamber of Heart" then
+        HideF()
     end
 end
 
@@ -398,12 +385,12 @@ end
 
 function OnUpdateFunction(self, deltaTime)
     local zone = GetMinimapZoneText()
-    if IsRunning() == true then
+    if IsRunning() then
         PrintOutputTexts()
         if zone == "Chamber of Heart" then
             HideF()
         end
-    elseif not forceHidden then
+    elseif isActivated and not forceHidden then
         if zone == "Vision of Stormwind" then
             ShowF()
             ZONE = 'SW'
@@ -429,6 +416,7 @@ end
 function setStormwind(msg, editBox)
     ZONE = 'SW'
     forceHidden = false
+    isActivated = true
     ShowF()
     CRYSTALS = { 0, 0, 0, 0, 0 }
     CHESTS = { 0, 0, 0, 0, 0 }
@@ -439,6 +427,7 @@ SlashCmdList["ZSTORM"] = setStormwind
 function setOrgrimmar(msg, editBox)
     ZONE = 'OG'
     forceHidden = false
+    isActivated = true
     ShowF()
     CRYSTALS = { 0, 0, 0, 0, 0 }
     CHESTS = { 0, 0, 0, 0, 0 }
