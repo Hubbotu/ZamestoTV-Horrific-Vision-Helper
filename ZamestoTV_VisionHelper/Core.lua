@@ -24,7 +24,14 @@ local L = {
         OG_LOCATIONS = { 'Vale da Força', 'Vale dos Espíritos', 'Vale da Sabedoria', 'O Bazar', 'Vale da Honra' },
         HELP_TEXT =
         "/zstorm - Ventobravo (reinicia a contagem)\n/zorgri - Orgrimmar (reinicia a contagem)\n/zmov - Alternar movimento do quadro\n/zhide - Ocultar estatísticas"
-    }
+    },
+    frFR = {
+        TITLE = "Suivi de la vision",
+        SW_LOCATIONS = { 'Place de la Cathédrale', 'Quartier des Nains', 'Vieille ville', 'Quartier commerçant', 'Quartier des Mages' },
+        OG_LOCATIONS = { 'Vallée de la Force', 'Vallée des Esprits', 'Vallée de la Sagesse', 'La Herse', 'Vallée de l’Honneur' },
+        HELP_TEXT =
+        "/zstorm - Hurlevent (réinitialise le compteur)\n/zorgri - Orgrimmar (réinitialise le compteur)\n/zmov - Permet le déplacement du cadre\n/zhide - Cacher les statistiques"
+    },
 }
 
 -- Set the default language based on game client locale

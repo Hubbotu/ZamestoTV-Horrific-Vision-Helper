@@ -2,9 +2,11 @@
 ## Title: Horrific Vision Helper
 ## Title-ruRU: Помощник по Видениям
 ## Title-ptBR: Horrific Vision Helper
+## Title-frFR: Horrific Vision Helper
 ## Notes: An indispensable assistant for visions
 ## Notes-ruRU: Незаменимый помощник по видениям
 ## Notes-ptBR: Um assistente indispensável para visões
+## Notes-frFR: Un assistant indispensable pour les visions
 ## Author: ZamestoTV
 ## IconTexture: Interface\AddOns\ZamestoTV_VisionHelper\Icons\goblin
 ## Version: 3.3
@@ -20,6 +22,7 @@
 ## Category-enUS: Addons ZamestoTV
 ## Category-ruRU: Аддоны ZamestoTV
 ## Category-ptBR: Addons ZamestoTV
+## Category-frFR: Addons ZamestoTV
 
 #@no-lib-strip@
 embeds.xml
@@ -28,6 +31,7 @@ embeds.xml
 Localization/ruRU.lua
 Localization/enUS.lua
 Localization/ptBR.lua
+Localization/frFR.lua
 
 handler.lua
 config.lua
