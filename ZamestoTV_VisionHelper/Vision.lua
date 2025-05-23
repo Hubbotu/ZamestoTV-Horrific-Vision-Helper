@@ -3,7 +3,7 @@ local HVT = addon
 
 -- Frame creation
 HVT.frame = CreateFrame("Frame", "HorrificVisionsTrackerFrame", UIParent)
-HVT.frame:SetPoint("CENTER", UIParent, "CENTER", -200, -300) -- Moved further from center
+HVT.frame:SetPoint("CENTER", UIParent, "CENTER", -200, -300)
 HVT.frame:SetSize(600, 400)
 HVT.frame:SetMovable(true)
 HVT.frame:SetFrameStrata("HIGH") -- Ensure frame is not obscured
@@ -469,12 +469,12 @@ SlashCmdList["HVT"] = function(msg)
     msg = msg:lower()
     if msg == "reset" then
         HVT.frame:ClearAllPoints()
-        HVT.frame:SetPoint("CENTER", UIParent, "CENTER", -200, -300) -- Updated reset position
+        HVT.frame:SetPoint("CENTER", UIParent, "CENTER", 500, 0) -- Move to right of center
         HVTDB.point = "CENTER"
         HVTDB.relativePoint = "CENTER"
-        HVTDB.xOfs = -200
-        HVTDB.yOfs = -300
-        print("Horrific Visions Tracker: Frame position reset to default.")
+        HVTDB.xOfs = 200
+        HVTDB.yOfs = 0
+        print("Horrific Visions Tracker: Frame position reset to right of center.")
     elseif msg == "" then
         -- Toggle frame visibility
         if HVT.frame:IsShown() then
@@ -491,7 +491,7 @@ SlashCmdList["HVT"] = function(msg)
     else
         print("Horrific Visions Tracker:")
         print("/vision - Toggle frame visibility")
-        print("/vision reset - Reset frame position to default")
+        print("/vision reset - Reset frame position to right of center")
         print("Click and drag the handle (top-right corner) to move the frame.")
     end
 end

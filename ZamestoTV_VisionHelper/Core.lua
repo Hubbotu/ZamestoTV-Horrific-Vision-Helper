@@ -9,28 +9,28 @@ local L = {
         SW_LOCATIONS = { 'Cathedral Square', 'Dwarven District', 'Old Town', 'Trade District', 'Mage Quarter' },
         OG_LOCATIONS = { 'Valley of Strength', 'Valley of Spirits', 'Valley of Wisdom', 'The Drag', 'Valley of Honor' },
         HELP_TEXT =
-        "/zstorm - Stormwind (resets counting)\n/zorgri - Orgrimmar (resets counting)\n/zmov - Toggle moving the frame\n/zhide - Hide stats"
+        "/zstorm - Stormwind (resets counting)\n/zorgri - Orgrimmar (resets counting)\n/zmov - Toggle moving the frame\n/zhide - Hide stats\n/zscale <value> - Set frame scale (0.5-2.0)\n/zfontsize <value> - Set font size (8-20)"
     },
     ruRU = {
         TITLE = "Трекер видений",
         SW_LOCATIONS = { 'Соборная площадь', 'Квартал Дворфов', 'Старый город', 'Торговый квартал', 'Квартал магов' },
         OG_LOCATIONS = { 'Крепость Громмаш', 'Аллея Духов', 'Аллея Мудрости', 'Волок', 'Аллея Чести' },
         HELP_TEXT =
-        "/zstorm - Штормград (сбрасывает подсчет)\n/zorgri - Оргриммар (сбрасывает подсчет)\n/zmov - Переключить перемещение окна\n/zhide - Скрыть статистику"
+        "/zstorm - Штормград (сбрасывает подсчет)\n/zorgri - Оргриммар (сбрасывает подсчет)\n/zmov - Переключить перемещение окна\n/zhide - Скрыть статистику\n/zscale <value> - Установить масштаб окна (0.5-2.0)\n/zfontsize <value> - Установить размер шрифта (8-20)"
     },
     ptBR = {
         TITLE = "Rastreador de Visão",
         SW_LOCATIONS = { 'Praça da Catedral', 'Distrito dos Anões', 'Cidade Velha', 'Distrito Comercial', 'Distrito dos Magos' },
         OG_LOCATIONS = { 'Vale da Força', 'Vale dos Espíritos', 'Vale da Sabedoria', 'O Bazar', 'Vale da Honra' },
         HELP_TEXT =
-        "/zstorm - Ventobravo (reinicia a contagem)\n/zorgri - Orgrimmar (reinicia a contagem)\n/zmov - Alternar movimento do quadro\n/zhide - Ocultar estatísticas"
+        "/zstorm - Ventobravo (reinicia a contagem)\n/zorgri - Orgrimmar (reinicia a contagem)\n/zmov - Alternar movimento do quadro\n/zhide - Ocultar estatísticas\n/zscale <value> - Definir escala do quadro (0.5-2.0)\n/zfontsize <value> - Definir tamanho da fonte (8-20)"
     },
     frFR = {
         TITLE = "Suivi de la vision",
         SW_LOCATIONS = { 'Place de la Cathédrale', 'Quartier des Nains', 'Vieille ville', 'Quartier commerçant', 'Quartier des Mages' },
         OG_LOCATIONS = { 'Vallée de la Force', 'Vallée des Esprits', 'Vallée de la Sagesse', 'La Herse', 'Vallée de l’Honneur' },
         HELP_TEXT =
-        "/zstorm - Hurlevent (réinitialise le compteur)\n/zorgri - Orgrimmar (réinitialise le compteur)\n/zmov - Permet le déplacement du cadre\n/zhide - Cacher les statistiques"
+        "/zstorm - Hurlevent (réinitialise le compteur)\n/zorgri - Orgrimmar (réinitialise le compteur)\n/zmov - Permet le déplacement du cadre\n/zhide - Cacher les statistiques\n/zscale <value> - Définir l'échelle du cadre (0.5-2.0)\n/zfontsize <value> - Définir la taille de la police (8-20)"
     },
 }
 
@@ -120,13 +120,17 @@ CHESTS = { 0, 0, 0, 0, 0 }
 CHESTS_IN_ZONE = { 3, 2, 2, 2, 2 }
 ZONE = 'SW'
 forceHidden = false
-
 movable = false
+frameScale = 1.0 -- Default frame scale
+fontSize = 15    -- Default font size
+
 SLASH_ZSTORM1 = "/zstorm"
 SLASH_ZORGRI1 = "/zorgri"
 SLASH_ZHIDE1 = "/zhide"
 SLASH_ZMOV1 = "/zmov"
 SLASH_ZCOMM1 = "/zcomm"
+SLASH_ZSCALE1 = "/zscale"
+SLASH_ZFONTSIZE1 = "/zfontsize"
 
 ---------------- UI Creation ----------------
 
@@ -139,6 +143,7 @@ local function CreateUI()
     CVT_Frame:EnableMouse(true)
     CVT_Frame:RegisterForDrag("LeftButton")
     CVT_Frame:SetAlpha(0) -- Initially hidden, as per HideF()
+    CVT_Frame:SetScale(frameScale) -- Apply initial scale
 
     -- Apply backdrop with background and border
     CVT_Frame:SetBackdrop({
@@ -159,7 +164,7 @@ local function CreateUI()
     TXT_FRAMES = {}
     for i = 1, 5 do
         local fs = CVT_Frame:CreateFontString("TXT" .. i, "OVERLAY")
-        fs:SetFont("Fonts\\ARIALN.TTF", 15)
+        fs:SetFont("Fonts\\ARIALN.TTF", fontSize)
         fs:SetJustifyH("LEFT")
         fs:SetJustifyV("TOP")
         fs:SetTextColor(1, 0, 0, 1) -- Default red color
@@ -305,11 +310,11 @@ function PrintOutputTexts()
             '/2 |TInterface\\ICONS\\inv_misc_gem_flamespessarite_02:14:14:0:0:16:16:0:16:0:16|t \| |TInterface\\ICONS\\inv_misc_treasurechest02d:14:14:0:0:16:16:0:16:0:16|t ' ..
             CHESTS[i] .. '/' .. CHESTS_IN_ZONE[i])
         if lastZoneId == 0 then
-            TXT_FRAMES[i]:SetFont("Fonts\\ARIALN.TTF", SIZES[2])
+            TXT_FRAMES[i]:SetFont("Fonts\\ARIALN.TTF", fontSize)
         elseif lastZoneId == i then
-            TXT_FRAMES[i]:SetFont("Fonts\\ARIALN.TTF", SIZES[3])
+            TXT_FRAMES[i]:SetFont("Fonts\\ARIALN.TTF", fontSize + 3)
         else
-            TXT_FRAMES[i]:SetFont("Fonts\\ARIALN.TTF", SIZES[1])
+            TXT_FRAMES[i]:SetFont("Fonts\\ARIALN.TTF", fontSize - 3)
         end
 
         local CL = TEXT_COLORS[CRYSTALS[i] + 1]
@@ -339,6 +344,7 @@ function ShowF()
         CreateUI()
     end
     CVT_Frame:SetAlpha(1) -- Shows frame, backdrop, and title
+    CVT_Frame:SetScale(frameScale) -- Apply current scale
     if TrakPos then
         CVT_Frame:ClearAllPoints()
         CVT_Frame:SetPoint(unpack(TrakPos))
@@ -459,16 +465,77 @@ end
 
 SlashCmdList["ZMOV"] = movability
 
+function setFrameScale(msg, editBox)
+    local scale = tonumber(msg)
+    if scale and scale >= 0.5 and scale <= 2.0 then
+        frameScale = scale
+        if CVT_Frame then
+            CVT_Frame:SetScale(frameScale)
+            SaveSettings()
+            print("Frame scale set to: " .. frameScale)
+        else
+            print("Frame not initialized. Creating UI...")
+            CreateUI()
+        end
+    else
+        print("Please enter a valid scale between 0.5 and 2.0")
+    end
+end
+
+SlashCmdList["ZSCALE"] = setFrameScale
+
+function setFontSize(msg, editBox)
+    local size = tonumber(msg)
+    if size and size >= 8 and size <= 20 then
+        fontSize = size
+        if TXT_FRAMES then
+            for i = 1, 5 do
+                TXT_FRAMES[i]:SetFont("Fonts\\ARIALN.TTF", fontSize)
+            end
+            SaveSettings()
+            PrintOutputTexts()
+            print("Font size set to: " .. fontSize)
+        else
+            print("Text frames not initialized. Creating UI...")
+            CreateUI()
+        end
+    else
+        print("Please enter a valid font size between 8 and 20")
+    end
+end
+
+SlashCmdList["ZFONTSIZE"] = setFontSize
+
 function helper(msg, editBox)
     print(L[lang].HELP_TEXT)
 end
 
 SlashCmdList["ZCOMM"] = helper
 
+---------------- Settings Persistence ----------------
+
+function SaveSettings()
+    if not ZamestoTV_Settings then
+        ZamestoTV_Settings = {}
+    end
+    ZamestoTV_Settings.frameScale = frameScale
+    ZamestoTV_Settings.fontSize = fontSize
+    ZamestoTV_Settings.position = TrakPos
+end
+
+function LoadSettings()
+    if ZamestoTV_Settings then
+        frameScale = ZamestoTV_Settings.frameScale or frameScale
+        fontSize = ZamestoTV_Settings.fontSize or fontSize
+        TrakPos = ZamestoTV_Settings.position or TrakPos
+    end
+end
+
 ---------------- Initialization ----------------
 
 local function OnAddonLoaded(self, event, addonName)
     if addonName == "ZamestoTV_VisionHelper" then
+        LoadSettings()
         CreateUI()
         LoadTextFrames()
         HideF()

@@ -9,7 +9,7 @@
 ## Notes-frFR: Un assistant indispensable pour les visions
 ## Author: ZamestoTV
 ## IconTexture: Interface\AddOns\ZamestoTV_VisionHelper\Icons\goblin
-## Version: 3.3
+## Version: 3.3.9
 ## SavedVariables: HVTDB
 ## SavedVariablesPerCharacter: TrakPos
 ## DefaultState: enabled
