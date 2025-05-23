@@ -32,6 +32,13 @@ local L = {
         HELP_TEXT =
         "/zstorm - Hurlevent (réinitialise le compteur)\n/zorgri - Orgrimmar (réinitialise le compteur)\n/zmov - Permet le déplacement du cadre\n/zhide - Cacher les statistiques\n/zscale <value> - Définir l'échelle du cadre (0.5-2.0)\n/zfontsize <value> - Définir la taille de la police (8-20)"
     },
+    zhCN = {
+        TITLE = "追踪器",
+        SW_LOCATIONS = { '教堂广场', '矮人区', '旧城区', '贸易区', '法师区' },
+        OG_LOCATIONS = { '力量谷', '精神谷', '智慧谷', '暗巷区', '荣誉谷' },
+        HELP_TEXT =
+        "/zstorm - 暴风城 (重置计数)\n/zorgri - 奥格瑞玛 (重置计数)\n/zmov - 切换移动框架\n/zhide - 隐藏统计"
+    } 
 }
 
 -- Set the default language based on game client locale

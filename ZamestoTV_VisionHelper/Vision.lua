@@ -128,7 +128,7 @@ HVT.strings = HVT.locale == "ruRU" and {
     ["Purple"] = "Roxo",
     ["Time left initial"] = "Tempo restante: N/A",
     ["Sanity initial"] = "Sanidade: 0",
-    ["Sanity loss from hits initial"] = "Perda de sanidade por acertos: 0"
+    ["Sanity loss from hits initial"] = "Perda de sanidade por acertos: 0" 
 } or HVT.locale == "frFR" and  {
     ["Time left"] = "Temps restant : %s",
     ["Sanity"] = "Santé mentale : %d",
@@ -141,6 +141,18 @@ HVT.strings = HVT.locale == "ruRU" and {
     ["Time left initial"] = "Temps restant : N/A",
     ["Sanity initial"] = "Santé mentale : 0",
     ["Sanity loss from hits initial"] = "Santé mentale perdue suite aux coups : 0"
+} or HVT.locale == "zhCN" and  {
+    ["Time left"] = "剩余时间：%s",
+    ["Sanity"] = "理智: %d",
+    ["Sanity loss from hits"] = "理智损失（受攻击）: %d",
+    ["Black"] = "黑色",
+    ["Green"] = "绿色",
+    ["Red"] = "红色",
+    ["Blue"] = "蓝色",
+    ["Purple"] = "紫色",
+    ["Time left initial"] = "剩余时间: N/A",
+    ["Sanity initial"] = "理智: 0",
+    ["Sanity loss from hits initial"] = "理智损失（受攻击）: 0"   
 } or {
     ["Time left"] = "Time left: %s",
     ["Sanity"] = "Sanity: %d",
