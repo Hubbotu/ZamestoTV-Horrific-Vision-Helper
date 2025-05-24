@@ -57,7 +57,8 @@ HVT.buffs = {
 HVT.sanityReduction = 0
 HVT.tickCache = {}
 HVT.ticks = 1
-HVT.lastPower = nil
+HVT.lastSanity = nil
+HVT.lastTime = nil
 HVT.lostToHits = 0
 HVT.lastBigHit = 0
 HVT.remainingTime = "N/A"
@@ -168,17 +169,69 @@ HVT.strings = HVT.locale == "ruRU" and {
 }
 
 -- Utility Functions
+local PossibleDrainLevels = {6, 8, 12}
+
 function HVT:SecondsToClock(seconds)
-    local secs = tonumber(seconds)
-    if secs <= 0 then return "00:00" end
-    local mins = string.format("%02.f", math.floor(secs / 60))
-    local secs = string.format("%02.f", math.floor(secs - mins * 60))
-    return mins .. ":" .. secs
+    seconds = tonumber(seconds)
+    if seconds <= 0 then
+        return "00:00"
+    else
+        local mins = math.floor(seconds / 60)
+        local secs = math.floor(seconds % 60)
+        return string.format("%02d:%02d", mins, secs)
+    end
 end
 
 function HVT:Round(num, decimalPlaces)
     local mult = 10^(decimalPlaces or 0)
     return math.floor(num * mult + 0.5) / mult
+end
+
+function HVT:GetSteeledMindReduction()
+    local name, _, _, count = AuraUtil.FindAuraByName("Steeled Mind", "player", "HELPFUL")
+    if name then
+        local stacks = count or 0
+        return stacks * 0.10
+    end
+    return 0 -- No buff = no resistance
+end
+
+function HVT:GetEffectiveDrain(drain)
+    local realDrain = drain / (1 - HVT.sanityReduction)
+    local closestLevel, minDiff = 6, math.huge
+    for _, level in ipairs(PossibleDrainLevels) do
+        local diff = math.abs(realDrain - level)
+        if diff < minDiff then
+            closestLevel = level
+            minDiff = diff
+        end
+    end
+    return closestLevel * (1 - HVT.sanityReduction)
+end
+
+function HVT:GetCacheAverage()
+    local sum, count = 0, 0
+    for _, tick in ipairs(HVT.tickCache) do
+        sum = sum + tick
+        count = count + 1
+    end
+    return (count > 0) and (sum / count) or 0
+end
+
+function HVT:ResetCache()
+    HVT.tickCache = {}
+end
+
+function HVT:Reset()
+    HVT.lastSanity = nil
+    HVT.lastTime = nil
+    HVT.lastBigHit = 0
+    HVT.lostToHits = 0
+    HVT.remainingTime = "N/A"
+    HVT.sanityReduction = HVT:GetSteeledMindReduction()
+    HVT:ResetCache()
+    HVT.ticks = 1
+    HVT.giftExpiration = 0
 end
 
 function HVT:GetItemSplit(itemLink)
@@ -212,43 +265,6 @@ function HVT:GetCloakResistance()
         end
     end
     return 0
-end
-
-function HVT:GetEffectiveDrain(diff)
-    local realDrain = diff / (1 - HVT.sanityReduction)
-    local possibleDrainLevels = {6, 8, 12}
-    local minDiff, closestLevel = math.huge, 5
-    for _, level in ipairs(possibleDrainLevels) do
-        local drainDiff = math.abs(realDrain - level)
-        if drainDiff < minDiff then
-            minDiff = drainDiff
-            closestLevel = level
-        end
-    end
-    return closestLevel * (1 - HVT.sanityReduction)
-end
-
-function HVT:GetCacheAverage()
-    local sum, totalTicks = 0, 0
-    for _, tick in pairs(HVT.tickCache) do
-        if tick and tick > 0 then sum = sum + tick end
-        totalTicks = totalTicks + 1
-    end
-    return totalTicks > 0 and sum / totalTicks or 0
-end
-
-function HVT:ResetCache()
-    HVT.tickCache = {}
-end
-
-function HVT:Reset()
-    HVT.lastBigHit = 0
-    HVT.lostToHits = 0
-    HVT.remainingTime = "N/A"
-    HVT.sanityReduction = HVT:GetCloakResistance()
-    HVT:ResetCache()
-    HVT.ticks = 1
-    HVT.giftExpiration = 0
 end
 
 -- UI Elements
@@ -401,8 +417,10 @@ HVT.frame:SetScript("OnEvent", function(self, event, ...)
         local unit, powerType = ...
         if unit == "player" and powerType == "ALTERNATE" then
             local power = UnitPower(unit, Enum.PowerType.Alternate)
-            if HVT.lastPower then
-                local diff = HVT.lastPower - power
+            local currentTime = GetTime()
+            if HVT.lastSanity and HVT.lastTime then
+                local diff = HVT.lastSanity - power
+                local timeDiff = currentTime - HVT.lastTime
                 if diff <= 12 and diff ~= 0 then -- Tick
                     local avg = HVT:GetCacheAverage()
                     if math.abs(diff - avg) > 1 then HVT:ResetCache() end
@@ -415,7 +433,8 @@ HVT.frame:SetScript("OnEvent", function(self, event, ...)
                     HVT.lostToHits = HVT.lostToHits + diff
                 end
             end
-            HVT.lastPower = power
+            HVT.lastSanity = power
+            HVT.lastTime = currentTime
             -- CHANGED: Use format strings for dynamic updates
             HVT.frames["Sanity"]:SetText(string.format(HVT.strings["Sanity"], power))
             HVT.frames["Time left"]:SetText(string.format(HVT.strings["Time left"], HVT.remainingTime))
@@ -428,6 +447,7 @@ HVT.frame:SetScript("OnEvent", function(self, event, ...)
             HVT.frames["Sanity"]:SetTextColor(unpack(color))
         end
     elseif event == "UNIT_AURA" and ... == "player" then
+        HVT.sanityReduction = HVT:GetSteeledMindReduction() -- Update sanity reduction on aura change
         for id, data in pairs(HVT.buffs) do
             local spellIds = data.spellIds or {data.spellId}
             local isActive = false
