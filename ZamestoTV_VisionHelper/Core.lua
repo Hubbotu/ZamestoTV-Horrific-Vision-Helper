@@ -9,35 +9,35 @@ local L = {
         SW_LOCATIONS = { 'Cathedral Square', 'Dwarven District', 'Old Town', 'Trade District', 'Mage Quarter' },
         OG_LOCATIONS = { 'Valley of Strength', 'Valley of Spirits', 'Valley of Wisdom', 'The Drag', 'Valley of Honor' },
         HELP_TEXT =
-        "/zstorm - Stormwind (resets counting)\n/zorgri - Orgrimmar (resets counting)\n/zmov - Toggle moving the frame\n/zhide - Hide stats\n/zscale <value> - Set frame scale (0.5-2.0)\n/zfontsize <value> - Set font size (8-20)"
+        "/zstorm - Stormwind (resets counting)\n/zorgri - Orgrimmar (resets counting)\n/zhide - Hide stats\n/zscale <value> - Set frame scale (0.5-2.0)\n/zfontsize <value> - Set font size (8-20)"
     },
     ruRU = {
         TITLE = "Трекер видений",
         SW_LOCATIONS = { 'Соборная площадь', 'Квартал Дворфов', 'Старый город', 'Торговый квартал', 'Квартал магов' },
         OG_LOCATIONS = { 'Крепость Громмаш', 'Аллея Духов', 'Аллея Мудрости', 'Волок', 'Аллея Чести' },
         HELP_TEXT =
-        "/zstorm - Штормград (сбрасывает подсчет)\n/zorgri - Оргриммар (сбрасывает подсчет)\n/zmov - Переключить перемещение окна\n/zhide - Скрыть статистику\n/zscale <value> - Установить масштаб окна (0.5-2.0)\n/zfontsize <value> - Установить размер шрифта (8-20)"
+        "/zstorm - Штормград (сбрасывает подсчет)\n/zorgri - Оргриммар (сбрасывает подсчет)\n/zhide - Скрыть статистику\n/zscale <value> - Установить масштаб окна (0.5-2.0)\n/zfontsize <value> - Установить размер шрифта (8-20)"
     },
     ptBR = {
         TITLE = "Rastreador de Visão",
         SW_LOCATIONS = { 'Praça da Catedral', 'Distrito dos Anões', 'Cidade Velha', 'Distrito Comercial', 'Distrito dos Magos' },
         OG_LOCATIONS = { 'Vale da Força', 'Vale dos Espíritos', 'Vale da Sabedoria', 'O Bazar', 'Vale da Honra' },
         HELP_TEXT =
-        "/zstorm - Ventobravo (reinicia a contagem)\n/zorgri - Orgrimmar (reinicia a contagem)\n/zmov - Alternar movimento do quadro\n/zhide - Ocultar estatísticas\n/zscale <value> - Definir escala do quadro (0.5-2.0)\n/zfontsize <value> - Definir tamanho da fonte (8-20)"
+        "/zstorm - Ventobravo (reinicia a contagem)\n/zorgri - Orgrimmar (reinicia a contagem)\n/zhide - Ocultar estatísticas\n/zscale <value> - Definir escala do quadro (0.5-2.0)\n/zfontsize <value> - Definir tamanho da fonte (8-20)"
     },
     frFR = {
         TITLE = "Suivi de la vision",
         SW_LOCATIONS = { 'Place de la Cathédrale', 'Quartier des Nains', 'Vieille ville', 'Quartier commerçant', 'Quartier des Mages' },
         OG_LOCATIONS = { 'Vallée de la Force', 'Vallée des Esprits', 'Vallée de la Sagesse', 'La Herse', 'Vallée de l’Honneur' },
         HELP_TEXT =
-        "/zstorm - Hurlevent (réinitialise le compteur)\n/zorgri - Orgrimmar (réinitialise le compteur)\n/zmov - Permet le déplacement du cadre\n/zhide - Cacher les statistiques\n/zscale <value> - Définir l'échelle du cadre (0.5-2.0)\n/zfontsize <value> - Définir la taille de la police (8-20)"
+        "/zstorm - Hurlevent (réinitialise le compteur)\n/zorgri - Orgrimmar (réinitialise le compteur)\n/zhide - Cacher les statistiques\n/zscale <value> - Définir l'échelle du cadre (0.5-2.0)\n/zfontsize <value> - Définir la taille de la police (8-20)"
     },
     zhCN = {
         TITLE = "追踪器",
         SW_LOCATIONS = { '教堂广场', '矮人区', '旧城区', '贸易区', '法师区' },
         OG_LOCATIONS = { '力量谷', '精神谷', '智慧谷', '暗巷区', '荣誉谷' },
         HELP_TEXT =
-        "/zstorm - 暴风城 (重置计数)\n/zorgri - 奥格瑞玛 (重置计数)\n/zmov - 切换移动框架\n/zhide - 隐藏统计"
+        "/zstorm - 暴风城 (重置计数)\n/zorgri - 奥格瑞玛 (重置计数)\n/zhide - 隐藏统计\n/zscale <value> - 设置框架缩放 (0.5-2.0)\n/zfontsize <value> - 设置字体大小 (8-20)"
     } 
 }
 
@@ -127,7 +127,6 @@ CHESTS = { 0, 0, 0, 0, 0 }
 CHESTS_IN_ZONE = { 3, 2, 2, 2, 2 }
 ZONE = 'SW'
 forceHidden = false
-movable = false
 frameScale = 1.0 -- Default frame scale
 fontSize = 15    -- Default font size
 isActivated = false -- Tracks if /zstorm or /zorgri has been called
@@ -135,7 +134,6 @@ isActivated = false -- Tracks if /zstorm or /zorgri has been called
 SLASH_ZSTORM1 = "/zstorm"
 SLASH_ZORGRI1 = "/zorgri"
 SLASH_ZHIDE1 = "/zhide"
-SLASH_ZMOV1 = "/zmov"
 SLASH_ZCOMM1 = "/zcomm"
 SLASH_ZSCALE1 = "/zscale"
 SLASH_ZFONTSIZE1 = "/zfontsize"
@@ -147,7 +145,7 @@ local function CreateUI()
     CVT_Frame = CreateFrame("Frame", "CVT_Frame", UIParent, "BackdropTemplate")
     CVT_Frame:SetSize(280, 170)
     CVT_Frame:SetPoint("LEFT")
-    CVT_Frame:SetMovable(false)
+    CVT_Frame:SetMovable(true) -- Frame is movable by default
     CVT_Frame:EnableMouse(true)
     CVT_Frame:RegisterForDrag("LeftButton")
     CVT_Frame:SetAlpha(0) -- Initially hidden, as per HideF()
@@ -189,16 +187,12 @@ local function CreateUI()
 
     -- Register scripts
     CVT_Frame:SetScript("OnDragStart", function(self)
-        if self:IsMovable() then
-            self:StartMoving()
-        end
+        self:StartMoving()
     end)
 
     CVT_Frame:SetScript("OnDragStop", function(self)
-        if self:IsMovable() then
-            self:StopMovingOrSizing()
-            SavePosition()
-        end
+        self:StopMovingOrSizing()
+        SavePosition()
     end)
 
     CVT_Frame:SetScript("OnUpdate", OnUpdateFunction)
@@ -342,8 +336,6 @@ function HideF()
         TXT_FRAMES[i]:SetText('')
     end
     CVT_Frame:SetAlpha(0) -- Hides frame, backdrop, and title
-    movable = false
-    CVT_Frame:SetMovable(movable)
     CVT_Frame:EnableMouse(true)
 end
 
@@ -365,7 +357,8 @@ function SavePosition()
     end
     local point, relativeTo, relativePoint, xOfs, yOfs = CVT_Frame:GetPoint(1)
     TrakPos = { point, relativeTo and relativeTo:GetName(), relativePoint, xOfs, yOfs }
-    print("saved")
+    SaveSettings() -- Save position to SavedVariables
+    print("Position saved")
 end
 
 ---------------- Events Functions ----------------
@@ -449,25 +442,13 @@ end
 
 SlashCmdList["ZHIDE"] = hideCrystalCounter
 
-function movability(msg, editBox)
-    if not CVT_Frame then
-        CreateUI()
-    end
-    movable = not movable
-    CVT_Frame:SetMovable(movable)
-    CVT_Frame:EnableMouse(movable)
-    print("Movable: " .. tostring(movable))
-end
-
-SlashCmdList["ZMOV"] = movability
-
 function setFrameScale(msg, editBox)
     local scale = tonumber(msg)
     if scale and scale >= 0.5 and scale <= 2.0 then
         frameScale = scale
         if CVT_Frame then
             CVT_Frame:SetScale(frameScale)
-            SaveSettings()
+            SaveSettings() -- Save to SavedVariables
             print("Frame scale set to: " .. frameScale)
         else
             print("Frame not initialized. Creating UI...")
@@ -488,7 +469,7 @@ function setFontSize(msg, editBox)
             for i = 1, 5 do
                 TXT_FRAMES[i]:SetFont("Fonts\\ARIALN.TTF", fontSize)
             end
-            SaveSettings()
+            SaveSettings() -- Save to SavedVariables
             PrintOutputTexts()
             print("Font size set to: " .. fontSize)
         else
@@ -511,9 +492,7 @@ SlashCmdList["ZCOMM"] = helper
 ---------------- Settings Persistence ----------------
 
 function SaveSettings()
-    if not ZamestoTV_Settings then
-        ZamestoTV_Settings = {}
-    end
+    ZamestoTV_Settings = ZamestoTV_Settings or {}
     ZamestoTV_Settings.frameScale = frameScale
     ZamestoTV_Settings.fontSize = fontSize
     ZamestoTV_Settings.position = TrakPos
@@ -521,9 +500,21 @@ end
 
 function LoadSettings()
     if ZamestoTV_Settings then
-        frameScale = ZamestoTV_Settings.frameScale or frameScale
-        fontSize = ZamestoTV_Settings.fontSize or fontSize
-        TrakPos = ZamestoTV_Settings.position or TrakPos
+        frameScale = ZamestoTV_Settings.frameScale or 1.0
+        fontSize = ZamestoTV_Settings.fontSize or 15
+        TrakPos = ZamestoTV_Settings.position or nil
+        if CVT_Frame then
+            CVT_Frame:SetScale(frameScale)
+            if TXT_FRAMES then
+                for i = 1, 5 do
+                    TXT_FRAMES[i]:SetFont("Fonts\\ARIALN.TTF", fontSize)
+                end
+            end
+            if TrakPos then
+                CVT_Frame:ClearAllPoints()
+                CVT_Frame:SetPoint(unpack(TrakPos))
+            end
+        end
     end
 end
 
