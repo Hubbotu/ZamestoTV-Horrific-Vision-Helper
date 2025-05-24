@@ -114,7 +114,35 @@ ns.points = {
             Zamro = true,
             note = L["Ripped Note Note"],
             pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj20.tga",
+        }),	
+        [57604960] = ({
+            label = L["Gain"],
+            cont = true,
+            Zamro = true,
+            note = L["Gain Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj111.tga",
         }),		
+        [54205780] = ({
+            label = L["Gain 2"],
+            cont = true,
+            Zamro = true,
+            note = L["Gain 2 Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj111.tga",
+        }),	
+        [60303690] = ({
+            label = L["Gain 3"],
+            cont = true,
+            Zamro = true,
+            note = L["Gain 3 Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj111.tga",
+        }),	
+        [62307690] = ({
+            label = L["Gain 4"],
+            cont = true,
+            Zamro = true,
+            note = L["Gain 4 Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj111.tga",
+        }),			
     },
     [2403] = { -- Vision of Orgrimmar
         [70503320] = ({

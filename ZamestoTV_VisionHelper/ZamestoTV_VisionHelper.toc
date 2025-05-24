@@ -11,7 +11,7 @@
 ## Notes-zhCN: 惊魂幻象助手
 ## Author: ZamestoTV
 ## IconTexture: Interface\AddOns\ZamestoTV_VisionHelper\Icons\goblin
-## Version: 3.3.96
+## Version: 3.4
 ## SavedVariables: HVTDB, ZamestoTV_Settings
 ## SavedVariablesPerCharacter: TrakPos
 ## DefaultState: enabled
