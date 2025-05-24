@@ -26,6 +26,14 @@ L["Wolf Rug"] = "|cFFFFFFFFWolf Rug|r"
 L["Wolf Rug Note"] = "Collect Wolf Saddle and Wolf Tack. You must have at least |cFF0070DD1 mask equipped|r. Then activate Wolf Rug to get |cFFa335eeVoid-Scarred Pack Mother's Harness|r"
 L["Valley of Wisdom Elevator"] = "|cFFFFFFFFVoid-Scarred Windrider|r"
 L["Valley of Wisdom Elevator Note"] = "Clear the Valley of Wisdom. You should have at |cFF0070DDleast 3 masks on you|r. Then take the elevator to the top floor. |cFFa335eeVoid-Scarred Windrider|r"
+L["Gain"] = "|cFFFFFFFFBear Spirit|r"
+L["Gain Note"] = "Increases haste by 10%."
+L["Gain 2"] = "|cFFFFFFFFRequited Bulwark|r"
+L["Gain 2 Note"] = "Versatility increased by 7%."
+L["Gain 3"] = "|cFFFFFFFFEmpowered|r"
+L["Gain 3 Note"] = "Damage done increased by 10%."
+L["Gain 4"] = "|cFFFFFFFFEnriched|r"
+L["Gain 4 Note"] = "Increases Critical Strike chance by 10%."
 
 -- Waypoints
 L["Create waypoint"] = true

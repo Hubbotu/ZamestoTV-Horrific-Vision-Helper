@@ -26,6 +26,14 @@ L["Wolf Rug"] = "|cFFFFFFFF狼皮毯|r"
 L["Wolf Rug Note"] = "收集狼鞍和狼具，需装备|cFF0070DD至少1个面具|r。激活狼皮毯获得|cFFa335ee虚痕狼母的缰绳|r"
 L["Valley of Wisdom Elevator"] = "|cFFFFFFFF虚痕驭风者的缰绳|r"
 L["Valley of Wisdom Elevator Note"] = "清空智慧谷，需装备|cFF0070DD至少3个面具|r。乘坐电梯至顶层。|cFFa335ee虚痕驭风者的缰绳|r"
+L["Gain"] = true
+L["Gain Note"] = true
+L["Gain 2"] = true
+L["Gain 2 Note"] = true
+L["Gain 3"] = true
+L["Gain 3 Note"] = true
+L["Gain 4"] = true
+L["Gain 4 Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = "创建路径点"

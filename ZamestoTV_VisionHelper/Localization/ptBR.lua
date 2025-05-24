@@ -37,6 +37,14 @@ L["Wolf Rug Note"] =
 L["Valley of Wisdom Elevator"] = "|cFFFFFFFFMantícora Marcada pelo Caos|r"
 L["Valley of Wisdom Elevator Note"] =
 "Limpe o Vale da Sabedoria. Você deve ter pelo menos |cFF0070DDleast 3 máscaras em você|r. Depois pegue o elevador até o último andar. |cFFa335eeMantícora Marcada pelo Caos|r"
+L["Gain"] = true
+L["Gain Note"] = true
+L["Gain 2"] = true
+L["Gain 2 Note"] = true
+L["Gain 3"] = true
+L["Gain 3 Note"] = true
+L["Gain 4"] = true
+L["Gain 4 Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = true
