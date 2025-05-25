@@ -53,11 +53,11 @@ local bars = {}
 
 -- Potion colors
 local potionColors = {
-    black = {r = 0.5, g = 0.5, b = 0.5, a = 1.0},
-    blue = {r = 0.1, g = 0.2, b = 0.9, a = 1.0},
-    green = {r = 0.1, g = 0.8, b = 0.1, a = 1.0},
-    purple = {r = 0.6, g = 0.1, b = 0.9, a = 1.0},
-    red = {r = 0.9, g = 0.1, b = 0.1, a = 1.0}
+    black = {r = 0.42, g = 0.42, b = 0.42, a = 1},   -- Gray
+    green = {r = 0.24, g = 0.79, b = 0.06, a = 1},   -- Green
+    red = {r = 0.95, g = 0.02, b = 0.04, a = 1},     -- Red
+    blue = {r = 0, g = 0.36, b = 1, a = 1},          -- Blue
+    purple = {r = 0.74, g = 0, b = 1, a = 1}         -- Purple
 }
 
 -- Utility functions
@@ -186,7 +186,7 @@ local function refreshPotionBars()
         end
         bar:Show()
         local colorName = aura_env.colours[v.position]
-        local texture = "Interface\\AddOns\\ZamestoTV_VisionHelper\\Icons\\Vision"
+        local texture = "Interface\\AddOns\\"..addonName.."\\Icons\\Vision"
         bar.icon:SetTexture(texture)
         if not bar.icon:GetTexture() then
             bar.icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
