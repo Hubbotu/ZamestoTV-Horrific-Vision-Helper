@@ -93,6 +93,8 @@ local aura_env = {
     },
     colours = {"black", "blue", "green", "purple", "red"},
     moveButton = nil,
+    closeButton = nil,
+    resetButton = nil, -- Added for reset button
     info = {
         {effect="bad", position=1, colour=defaults.colours.bad, display=defaults.effects.bad},
         {effect="good", position=3, colour=defaults.colours.good, display=defaults.effects.good},
@@ -105,69 +107,20 @@ local aura_env = {
     format_duration = format_duration
 }
 
--- Dynamic info for potions
-local function dynamicinfo(buffs)
-    aura_env.resetinfo(buffs)
-    local queried = {}
-    local counter = 0
-    for _,_ in pairs(buffs) do counter = counter + 1 end
-    for i = 1, 40 do
-        local name, duration, expiration, spellid
-        if C_UnitAuras and C_UnitAuras.GetAuraDataByIndex then
-            local auraData = C_UnitAuras.GetAuraDataByIndex("player", i, "HELPFUL")
-            if not auraData then break end
-            name = auraData.name
-            duration = auraData.duration
-            expiration = auraData.expirationTime
-            spellid = auraData.spellId
-        else
-            name, _, _, _, duration, expiration, _, _, _, _, spellid = UnitAura("player", i, "HELPFUL")
-            if not name then break end
-        end
-        if buffs[name] then
-            table.insert(queried, name)
-            buffs[name].spellid = spellid
-            buffs[name].duration = duration
-            buffs[name].expiration = expiration
-        end
-        if #queried == counter then break end
-    end
-end
-
-function aura_env.resetinfo(buffs)
-    for name, _ in pairs(buffs) do
-        buffs[name].duration = nil
-        buffs[name].expiration = nil
-    end
-end
-
-function aura_env.cycle(t, e)
-    if t[1] == e then return t end
-    local index = 1
-    while index <= #t and t[index] ~= e do
-        index = index + 1
-    end
-    if index > #t then return t end
-    local x = {}
-    for i = index, #t do
-        table.insert(x, t[i])
-    end
-    for i = 1, index-1 do
-        table.insert(x, t[i])
-    end
-    return x
-end
-
 -- Update functions
 local function refreshPotionBars()
     if not aura_env.visible then
         for _, bar in ipairs(bars) do bar:Hide() end
         frame:Hide()
         if aura_env.moveButton then aura_env.moveButton:Hide() end
+        if aura_env.closeButton then aura_env.closeButton:Hide() end
+        if aura_env.resetButton then aura_env.resetButton:Hide() end -- Hide reset button
         return
     end
     frame:Show()
     if aura_env.moveButton then aura_env.moveButton:Show() end
+    if aura_env.closeButton then aura_env.closeButton:Show() end
+    if aura_env.resetButton then aura_env.resetButton:Show() end -- Show reset button
     local buffs = aura_env.buffinfo
     for i, v in ipairs(aura_env.info) do
         local bar = bars[i]
@@ -228,6 +181,68 @@ local function refreshPotionBars()
     end
 end
 
+-- Function to reset timers
+local function resetTimers()
+    for name, _ in pairs(aura_env.buffinfo) do
+        aura_env.buffinfo[name].duration = nil
+        aura_env.buffinfo[name].expiration = nil
+    end
+    refreshPotionBars()
+end
+
+-- Dynamic info for potions
+local function dynamicinfo(buffs)
+    aura_env.resetinfo(buffs)
+    local queried = {}
+    local counter = 0
+    for _,_ in pairs(buffs) do counter = counter + 1 end
+    for i = 1, 40 do
+        local name, duration, expiration, spellid
+        if C_UnitAuras and C_UnitAuras.GetAuraDataByIndex then
+            local auraData = C_UnitAuras.GetAuraDataByIndex("player", i, "HELPFUL")
+            if not auraData then break end
+            name = auraData.name
+            duration = auraData.duration
+            expiration = auraData.expirationTime
+            spellid = auraData.spellId
+        else
+            name, _, _, _, duration, expiration, _, _, _, _, spellid = UnitAura("player", i, "HELPFUL")
+            if not name then break end
+        end
+        if buffs[name] then
+            table.insert(queried, name)
+            buffs[name].spellid = spellid
+            buffs[name].duration = duration
+            buffs[name].expiration = expiration
+        end
+        if #queried == counter then break end
+    end
+end
+
+function aura_env.resetinfo(buffs)
+    for name, _ in pairs(buffs) do
+        buffs[name].duration = nil
+        buffs[name].expiration = nil
+    end
+end
+
+function aura_env.cycle(t, e)
+    if t[1] == e then return t end
+    local index = 1
+    while index <= #t and t[index] ~= e do
+        index = index + 1
+    end
+    if index > #t then return t end
+    local x = {}
+    for i = index, #t do
+        table.insert(x, t[i])
+    end
+    for i = 1, index-1 do
+        table.insert(x, t[i])
+    end
+    return x
+end
+
 -- UI setup for Potion Cheatsheet
 local function setupPotionBars()
     frame:ClearAllPoints()
@@ -277,7 +292,6 @@ local function setupPotionBars()
             GameTooltip:Hide()
         end)
         
-        -- Add click handler for potion rotation
         bar.icon:EnableMouse(true)
         bar.icon:SetScript("OnMouseDown", function(self, button)
             if button == "LeftButton" then
@@ -301,7 +315,7 @@ local function setupPotionBars()
     -- Create Move button
     local moveButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
     moveButton:SetSize(80, 22)
-    moveButton:SetPoint("BOTTOM", frame, "BOTTOM", 0, 10)
+    moveButton:SetPoint("BOTTOMLEFT", frame, "BOTTOM", -83, 10)
     moveButton:SetText("Move")
     moveButton:SetNormalFontObject("GameFontNormal")
     moveButton:RegisterForDrag("LeftButton")
@@ -325,6 +339,35 @@ local function setupPotionBars()
         }
     end)
     aura_env.moveButton = moveButton
+    
+    -- Create Reset button
+    local resetButton = CreateFrame("Button", nil, frame, "UIPanelButtonTemplate")
+    resetButton:SetSize(80, 22)
+    resetButton:SetPoint("BOTTOMLEFT", frame, "BOTTOM", 3, 10)
+    resetButton:SetText("Reset")
+    resetButton:SetNormalFontObject("GameFontNormal")
+    resetButton:SetScript("OnClick", function(self)
+        resetTimers()
+    end)
+    aura_env.resetButton = resetButton
+    
+    -- Create Close button
+    local closeButton = CreateFrame("Button", nil, frame)
+    closeButton:SetSize(32, 32)
+    closeButton:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -2, -2)
+    closeButton:SetNormalTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Up")
+    closeButton:SetPushedTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Down")
+    closeButton:SetHighlightTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight")
+    closeButton:SetScript("OnClick", function(self)
+        aura_env.visible = false
+        aura_env.enteredworld = false
+        if not HorrificVisionTrackerDB then
+            HorrificVisionTrackerDB = {}
+        end
+        HorrificVisionTrackerDB.visible = false
+        refreshPotionBars()
+    end)
+    aura_env.closeButton = closeButton
 end
 
 -- Slash command for hide/show
