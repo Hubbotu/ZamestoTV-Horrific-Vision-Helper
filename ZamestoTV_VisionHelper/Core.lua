@@ -146,7 +146,8 @@ local function CreateUI()
     CVT_Frame:SetSize(280, 170)
     CVT_Frame:SetPoint("LEFT")
     CVT_Frame:SetMovable(true) -- Frame is movable by default
-    CVT_Frame:EnableMouse(true)
+    CVT_Frame:EnableMouse(true) -- Enable mouse for dragging when visible
+    CVT_Frame:SetFrameStrata("LOW") -- Set to LOW to avoid overlapping with party frames
     CVT_Frame:RegisterForDrag("LeftButton")
     CVT_Frame:SetAlpha(0) -- Initially hidden, as per HideF()
     CVT_Frame:SetScale(frameScale) -- Apply initial scale
@@ -336,7 +337,7 @@ function HideF()
         TXT_FRAMES[i]:SetText('')
     end
     CVT_Frame:SetAlpha(0) -- Hides frame, backdrop, and title
-    CVT_Frame:EnableMouse(true)
+    CVT_Frame:EnableMouse(false) -- Disable mouse when hidden
 end
 
 function ShowF()
@@ -345,6 +346,7 @@ function ShowF()
     end
     CVT_Frame:SetAlpha(1) -- Shows frame, backdrop, and title
     CVT_Frame:SetScale(frameScale) -- Apply current scale
+    CVT_Frame:EnableMouse(true) -- Enable mouse for dragging when visible
     if TrakPos then
         CVT_Frame:ClearAllPoints()
         CVT_Frame:SetPoint(unpack(TrakPos))
@@ -402,6 +404,10 @@ function OnUpdateFunction(self, deltaTime)
             CRYSTALS = { 0, 0, 0, 0, 0 }
             CHESTS = { 0, 0, 0, 0, 0 }
         end
+    end
+    -- Ensure mouse is disabled when frame is hidden
+    if CVT_Frame and CVT_Frame:GetAlpha() == 0 then
+        CVT_Frame:EnableMouse(false)
     end
 end
 
