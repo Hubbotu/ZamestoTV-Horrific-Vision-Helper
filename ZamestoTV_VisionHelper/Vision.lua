@@ -72,12 +72,6 @@ HVT.kind = HVT.locale == "zhCN" and {
     "|cffFFFFFF回血|r",      -- Healing
     "|cffFFFFFF减伤|r",      -- Defensive
     "|cffF0FF00理智|r"       -- Sanity
-} or HVT.locale == "zhTW" and {
-    "|cff6A84BC毒藥|r", -- Poison
-    "|cffFF7373龍息|r", -- Breath Fire
-    "|cffFFAA6C回血|r", -- Healing
-    "|cff6CFFFD減傷|r", -- Defensive
-    "|cffF0FF00理智|r" -- Sanity    
 } or HVT.locale == "ruRU" and {
     "|cff6A84BCЯд|r",        -- Poison
     "|cffFF7373Огн. дыхание|r", -- Breath Fire
@@ -159,19 +153,7 @@ HVT.strings = HVT.locale == "ruRU" and {
     ["Purple"] = "紫色",
     ["Time left initial"] = "剩余时间: N/A",
     ["Sanity initial"] = "理智: 0",
-    ["Sanity loss from hits initial"] = "理智损失（受攻击）: 0"
-} or HVT.locale == "zhTW" and  {
-    ["Time left"] = "剩餘時間：%s",
-    ["Sanity"] = "理智: %d",
-    ["Sanity loss from hits"] = "理智損失（受攻擊）: %d",
-    ["Black"] = "黑色",
-    ["Green"] = "綠色",
-    ["Red"] = "紅色",
-    ["Blue"] = "藍色",
-    ["Purple"] = "紫色",
-    ["Time left initial"] = "剩餘時間: N/A",
-    ["Sanity initial"] = "理智: 0",
-    ["Sanity loss from hits initial"] = "理智損失（受攻擊）: 0"     
+    ["Sanity loss from hits initial"] = "理智损失（受攻击）: 0"   
 } or {
     ["Time left"] = "Time left: %s",
     ["Sanity"] = "Sanity: %d",
