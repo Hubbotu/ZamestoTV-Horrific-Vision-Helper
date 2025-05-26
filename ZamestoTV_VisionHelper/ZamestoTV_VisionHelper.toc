@@ -14,9 +14,8 @@
 ## Author: ZamestoTV
 ## IconTexture: Interface\AddOns\ZamestoTV_VisionHelper\Icons\goblin
 ## Version: 3.5.4
-## SavedVariables: HVTDB, ZamestoTV_Settings, HorrificVisionTrackerDB
+## SavedVariables: HVTDB, ZamestoTV_Settings, HorrificVisionTrackerDB, ZamestoTV_VisionHelperDB
 ## SavedVariablesPerCharacter: TrakPos
-## DefaultState: enabled
 ## X-Category: Map
 ## RequiredDeps: HandyNotes
 ## OptionalDeps: 
