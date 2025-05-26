@@ -13,7 +13,7 @@
 ## Notes-zhTW: 恐怖幻象助手
 ## Author: ZamestoTV
 ## IconTexture: Interface\AddOns\ZamestoTV_VisionHelper\Icons\goblin
-## Version: 3.5
+## Version: 3.5.4
 ## SavedVariables: HVTDB, ZamestoTV_Settings, HorrificVisionTrackerDB
 ## SavedVariablesPerCharacter: TrakPos
 ## DefaultState: enabled
@@ -48,3 +48,4 @@ Vision.lua
 Core.lua
 Auto.lua
 Vision2.lua
+up.lua
