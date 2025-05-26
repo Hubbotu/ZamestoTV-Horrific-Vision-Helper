@@ -38,6 +38,13 @@ local L = {
         OG_LOCATIONS = { '力量谷', '精神谷', '智慧谷', '暗巷区', '荣誉谷' },
         HELP_TEXT =
         "/zstorm - 暴风城 (重置计数)\n/zorgri - 奥格瑞玛 (重置计数)\n/zhide - 隐藏统计\n/zscale <value> - 设置框架缩放 (0.5-2.0)\n/zfontsize <value> - 设置字体大小 (8-20)"
+    },
+	zhTW = {
+        TITLE = "追蹤器",
+        SW_LOCATIONS = { '教堂廣場', '矮人區', '舊城區', '貿易區', '法師區' },
+        OG_LOCATIONS = { '力量谷', '精神谷', '智慧谷', '暗巷區', '榮譽谷' },
+        HELP_TEXT =
+        "/zstorm - 暴風城 (重置計數)\n/zorgri - 奧格瑪 (重置計數)\n/zhide - 隱藏統計\n/zscale <value> - 設置框架縮放 (0.5-2.0)\n/zfontsize <value> - 設置字體大小 (8-20)"
     } 
 }
 
