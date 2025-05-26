@@ -48,4 +48,3 @@ Vision.lua
 Core.lua
 Auto.lua
 Vision2.lua
-up.lua
