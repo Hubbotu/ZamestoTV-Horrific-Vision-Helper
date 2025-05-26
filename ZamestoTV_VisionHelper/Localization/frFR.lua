@@ -26,14 +26,14 @@ L["Wolf Rug"] = "|cFFFFFFFFTapis en peau de loup|r"
 L["Wolf Rug Note"] = "Récupérez la Selle de loup et le Sac de sellerie pour loup. Vous devez avoir |cFF0070DDau moins 1 masque actif|r. Intéragissez ensuite avec le Tapis en peau de loup pour obtenir le |cFFa335eeHarnais de la mère de meute marquée par le Vide|r"
 L["Valley of Wisdom Elevator"] = "|cFFFFFFFFCoursier du vent marqué par le Vide|r"
 L["Valley of Wisdom Elevator Note"] = "Complétez la zone située à la Vallée de la Sagesse. Vous devez avoir |cFF0070DDau moins 3 masques actifs|r. Prenez ensuite l'ascenseur jusqu'au dernier étage. |cFFa335eeCoursier du vent marqué par le Vide|r"
-L["Gain"] = "|cFFFFFFFFEsprit ours|r"
-L["Gain Note"] = "Augmente la Hâte de 10%."
-L["Gain 2"] = "|cFFFFFFFFRempart vengeur|r"
-L["Gain 2 Note"] = "Polyvalence augmentée de 7%."
-L["Gain 3"] = "|cFFFFFFFFSurpuissant|r"
-L["Gain 3 Note"] = "Dégâts infligés augmentés de 10%."
-L["Gain 4"] = "|cFFFFFFFFEnrichi|r"
-L["Gain 4 Note"] = "Augmente les chances de coup critique de 10%."
+L["Gain"] = true
+L["Gain Note"] = true
+L["Gain 2"] = true
+L["Gain 2 Note"] = true
+L["Gain 3"] = true
+L["Gain 3 Note"] = true
+L["Gain 4"] = true
+L["Gain 4 Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = "Créer un point de passage"
