@@ -18,6 +18,7 @@ frame:SetScript("OnDragStop", function(self)
     AVNS_SavedVars.xOfs = xOfs
     AVNS_SavedVars.yOfs = yOfs
 end)
+frame:Hide() -- Hide frame by default at creation
 
 -- Set background texture
 local bg = frame:CreateTexture(nil, "BACKGROUND")
@@ -220,25 +221,98 @@ hideButton:SetScript("OnClick", function()
     end
 end)
 
--- Hide frame by default
-frame:Hide()
+-- Add demarcation line below Chests and Crystals buttons
+local line2 = frame:CreateTexture(nil, "BORDER")
+line2:SetTexture("Interface\\Buttons\\WHITE8X8")
+line2:SetVertexColor(1, 1, 1, 0.5) -- White with transparency
+line2:SetPoint("TOPLEFT", frame, "TOPLEFT", 4, -155)
+line2:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, -155)
+line2:SetHeight(1)
 
--- Slash command to toggle frame
-SLASH_AVNS1 = "/avns"
-SlashCmdList["AVNS"] = function()
-    if frame:IsShown() then
-        frame:Hide()
-        AVNS_SavedVars.isShown = false
+-- Add Masks Equipped inscription
+frame.masksText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+frame.masksText:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, -165)
+frame.masksText:SetFont("Fonts\\Arial.TTF", 16, "OUTLINE")
+frame.masksText:SetTextColor(1, 1, 1, 1)
+frame.masksText:SetText("Masks Equipped: 0")
+
+-- Config for mask checking
+local MASK_AURA_ID = 313471
+local ZONE_ID = {2403, 2404}
+
+-- Utility: Check current map
+local function IsInTargetZone()
+    local mapID = C_Map.GetBestMapForUnit("player")
+    return mapID == ZONE_ID[1] or mapID == ZONE_ID[2]
+end
+
+-- Find aura index by spell ID
+local function GetAuraIndexBySpellID(spellID)
+    for i = 1, 40 do
+        local aura = C_UnitAuras.GetAuraDataByIndex("player", i, "HARMFUL")
+        if not aura then break end
+        if aura.spellId == spellID then
+            return i
+        end
+    end
+    return nil
+end
+
+-- Concatenate full tooltip text and extract percent
+local function ExtractMaskCountFromTooltip(index)
+    if not index then return 0 end
+
+    GameTooltip:SetOwner(WorldFrame, "ANCHOR_NONE")
+    GameTooltip:ClearLines()
+    GameTooltip:SetUnitAura("player", index, "HARMFUL")
+
+    local fullText = ""
+    for i = 1, GameTooltip:NumLines() do
+        local line = _G["GameTooltipTextLeft" .. i]
+        if line then
+            local txt = line:GetText()
+            if txt then
+                fullText = fullText .. " " .. txt
+            end
+        end
+    end
+
+    -- Match "increased by XX%" and convert
+    local match = string.match(fullText, "increased by%s*(%d+)%%")
+    if match then
+        local percent = tonumber(match)
+        if percent then
+            return math.floor(percent / 25)
+        end
+    end
+
+    return 0
+end
+
+-- Update Masks Count display
+local function UpdateMasksDisplay()
+    if not frame:IsShown() or not IsInTargetZone() then
+        frame.masksText:SetText("Masks Equipped: 0")
+        return
+    end
+
+    local auraIndex = GetAuraIndexBySpellID(MASK_AURA_ID)
+    if auraIndex then
+        local maskCount = ExtractMaskCountFromTooltip(auraIndex)
+        frame.masksText:SetText("Masks Equipped: " .. tostring(maskCount))
     else
-        frame:Show()
-        AVNS_SavedVars.isShown = true
+        frame.masksText:SetText("Masks Equipped: 0")
     end
 end
 
--- Event handling for loading SavedVariables
+-- Event listener for mask count updates and SavedVariables
 frame:RegisterEvent("ADDON_LOADED")
-frame:SetScript("OnEvent", function(self, event, arg1)
-    if event == "ADDON_LOADED" and arg1 == "AVNS_Settings" then
+frame:RegisterEvent("UNIT_AURA")
+frame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:RegisterEvent("PLAYER_LOGIN")
+frame:SetScript("OnEvent", function(self, event, ...)
+    if event == "ADDON_LOADED" and select(1, ...) == "AVNS_Settings" then
         -- Initialize SavedVariables if nil
         if not AVNS_SavedVars then
             AVNS_SavedVars = {
@@ -252,14 +326,35 @@ frame:SetScript("OnEvent", function(self, event, arg1)
         
         -- Restore position
         if AVNS_SavedVars.point then
-            frame:SetPoint(AVNS_SavedVars.point, UIParent, AVNS_SavedVars.relativePoint, AVNS_SavedVars.xOfs, AVNS_SavedVars.yOfs)
+            self:ClearAllPoints()
+            self:SetPoint(AVNS_SavedVars.point, UIParent, AVNS_SavedVars.relativePoint, AVNS_SavedVars.xOfs, AVNS_SavedVars.yOfs)
         end
         
         -- Restore visibility
         if AVNS_SavedVars.isShown then
-            frame:Show()
+            self:Show()
+            UpdateMasksDisplay()
         else
-            frame:Hide()
+            self:Hide()
         end
+    elseif event == "UNIT_AURA" then
+        local unit = ...
+        if unit ~= "player" then return end
+        C_Timer.After(0.1, UpdateMasksDisplay)
+    elseif event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_ENTERING_WORLD" or event == "PLAYER_LOGIN" then
+        C_Timer.After(0.1, UpdateMasksDisplay)
     end
 end)
+
+-- Slash command to toggle frame
+SLASH_AVNS1 = "/avns"
+SlashCmdList["AVNS"] = function()
+    if frame:IsShown() then
+        frame:Hide()
+        AVNS_SavedVars.isShown = false
+    else
+        frame:Show()
+        AVNS_SavedVars.isShown = true
+        UpdateMasksDisplay() -- Update mask count when shown
+    end
+end
