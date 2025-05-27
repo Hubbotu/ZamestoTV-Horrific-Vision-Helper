@@ -17,6 +17,7 @@
 ## SavedVariables: HVTDB, ZamestoTV_Settings, HorrificVisionTrackerDB, ZamestoTV_VisionHelperDB
 ## SavedVariablesPerCharacter: TrakPos
 ## X-Category: Map
+## X-Localizations: enUS, frFR, ruRU, ptBR, zhCN, zhTW
 ## RequiredDeps: HandyNotes
 ## OptionalDeps: 
 ## DefaultState: Enabled
