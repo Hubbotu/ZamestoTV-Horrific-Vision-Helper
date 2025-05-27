@@ -40,7 +40,7 @@ frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 frame.title:SetPoint("TOP", frame, "TOP", 0, -5)
 frame.title:SetFont("Fonts\\Arial.TTF", 16, "OUTLINE")
 frame.title:SetTextColor(1, 1, 1, 1)
-frame.title:SetText("Settings")
+frame.title:SetText("Settings Vision Helper")
 
 -- Add Potions 1 inscription
 frame.potionsText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
@@ -129,7 +129,7 @@ frame.chestsText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 frame.chestsText:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, -105)
 frame.chestsText:SetFont("Fonts\\Arial.TTF", 16, "OUTLINE")
 frame.chestsText:SetTextColor(1, 1, 1, 1)
-frame.chestsText:SetText("Chests and Crystals")
+frame.chestsText:SetText("Chests and Crystals:")
 
 -- Create Storm button
 local stormButton = CreateFrame("Button", "AVNS_StormButton", frame, "UIPanelButtonTemplate")
