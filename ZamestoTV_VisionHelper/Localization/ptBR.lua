@@ -45,6 +45,14 @@ L["Gain 3"] = true
 L["Gain 3 Note"] = true
 L["Gain 4"] = true
 L["Gain 4 Note"] = true
+L["Gain 5"] = true
+L["Gain 5 Note"] = true
+L["Gain 6"] = true
+L["Gain 6 Note"] = true
+L["Gain 7"] = true
+L["Gain 7 Note"] = true
+L["Gain 8"] = true
+L["Gain 8 Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = true

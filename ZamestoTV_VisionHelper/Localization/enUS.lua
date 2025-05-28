@@ -34,6 +34,14 @@ L["Gain 3"] = "|cFFFFFFFFEmpowered|r"
 L["Gain 3 Note"] = "Damage done increased by 10%."
 L["Gain 4"] = "|cFFFFFFFFEnriched|r"
 L["Gain 4 Note"] = "Increases Critical Strike chance by 10%."
+L["Gain 5"] = "|cFFFFFFFFProhibition|r"
+L["Gain 5 Note"] = "Increases health by 10%."
+L["Gain 6"] = "|cFFFFFFFFSpirit of Wind|r"
+L["Gain 6 Note"] = "Haste increased by 10%. Movement speed increased by 10%."
+L["Gain 7"] = "|cFFFFFFFFEthereal Essence|r"
+L["Gain 7 Note"] = "Critical Strike chance increased by 10%."
+L["Gain 8"] = "|cFFFFFFFFSmith's Strength|r"
+L["Gain 8 Note"] = "All damage increased by 10%."
 
 -- Waypoints
 L["Create waypoint"] = true

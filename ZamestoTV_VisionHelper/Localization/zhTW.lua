@@ -34,6 +34,14 @@ L["Gain 3"] = "|cFFFFFFFF賦能|r"
 L["Gain 3 Note"] = "造成傷害提高 10%。"
 L["Gain 4"] = "|cFFFFFFFF受到強化|r"
 L["Gain 4 Note"] = "致命一擊機率提高 10%。"
+L["Gain 5"] = true
+L["Gain 5 Note"] = true
+L["Gain 6"] = true
+L["Gain 6 Note"] = true
+L["Gain 7"] = true
+L["Gain 7 Note"] = true
+L["Gain 8"] = true
+L["Gain 8 Note"] = true
 
 
 -- Waypoints

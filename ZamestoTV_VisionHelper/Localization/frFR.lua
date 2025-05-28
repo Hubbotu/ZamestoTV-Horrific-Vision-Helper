@@ -34,6 +34,14 @@ L["Gain 3"] = "|cFFFFFFFFSurpuissant|r"
 L["Gain 3 Note"] = "Dégâts infligés augmentés de 10%."
 L["Gain 4"] = "|cFFFFFFFFEnrichi|r"
 L["Gain 4 Note"] = "Augmente les chances de coup critique de 10%."
+L["Gain 5"] = true
+L["Gain 5 Note"] = true
+L["Gain 6"] = true
+L["Gain 6 Note"] = true
+L["Gain 7"] = true
+L["Gain 7 Note"] = true
+L["Gain 8"] = true
+L["Gain 8 Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = "Créer un point de passage"
