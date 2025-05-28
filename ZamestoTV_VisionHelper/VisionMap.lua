@@ -222,5 +222,33 @@ ns.points = {
             note = L["Valley of Wisdom Elevator Note"],
             pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj293.tga",
         }),
+        [54807830] = ({
+            label = L["Gain 5"],
+            cont = true,
+            Zamro = true,
+            note = L["Gain 5 Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj111.tga",
+        }),	
+        [32406720] = ({
+            label = L["Gain 6"],
+            cont = true,
+            Zamro = true,
+            note = L["Gain 6 Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj111.tga",
+        }),	
+        [57806520] = ({
+            label = L["Gain 7"],
+            cont = true,
+            Zamro = true,
+            note = L["Gain 7 Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj111.tga",
+        }),	
+        [45607760] = ({
+            label = L["Gain 8"],
+            cont = true,
+            Zamro = true,
+            note = L["Gain 8 Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj111.tga",
+        }),			
     },
 }
