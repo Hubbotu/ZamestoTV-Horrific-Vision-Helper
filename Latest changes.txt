@@ -1,3 +1,5 @@
 Исправлено местоположение Ковра из шкуры волка
+Добавлено местоположение Блока цилиндров из Бездны.
 
 Fixed Wolf Rug location
+Added Void-Forged Engine Block location
