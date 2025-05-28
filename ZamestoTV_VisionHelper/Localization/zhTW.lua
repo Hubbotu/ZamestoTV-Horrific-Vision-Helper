@@ -34,14 +34,14 @@ L["Gain 3"] = "|cFFFFFFFF賦能|r"
 L["Gain 3 Note"] = "造成傷害提高 10%。"
 L["Gain 4"] = "|cFFFFFFFF受到強化|r"
 L["Gain 4 Note"] = "致命一擊機率提高 10%。"
-L["Gain 5"] = true
-L["Gain 5 Note"] = true
-L["Gain 6"] = true
-L["Gain 6 Note"] = true
-L["Gain 7"] = true
-L["Gain 7 Note"] = true
-L["Gain 8"] = true
-L["Gain 8 Note"] = true
+L["Gain 5"] = "|cFFFFFFFF禁制|r"
+L["Gain 5 Note"] = "使生命力提高10%。"
+L["Gain 6"] = "|cFFFFFFFF風靈|r"
+L["Gain 6 Note"] = "加速提高10%。 移動速度提高10%。"
+L["Gain 7"] = "|cFFFFFFFF以太精華|r"
+L["Gain 7 Note"] = "致命一擊機率提高10%。"
+L["Gain 8"] = "|cFFFFFFFF鍛造師之力|r"
+L["Gain 8 Note"] = "所有傷害提高10%。"
 
 
 -- Waypoints
