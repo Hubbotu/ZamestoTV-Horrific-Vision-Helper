@@ -42,6 +42,10 @@ L["Gain 7"] = "|cFFFFFFFF虚灵精华|r"
 L["Gain 7 Note"] = "爆击几率提高10%。"
 L["Gain 8"] = "|cFFFFFFFF铁匠之力|r"
 L["Gain 8 Note"] = "所有伤害提高10%。"
+L["Void-Forged Engine Block"] = true
+L["Void-Forged Engine Block Note"] = true
+L["Poisons"] = true
+L["Poisons Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = "创建路径点"
