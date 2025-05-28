@@ -42,6 +42,10 @@ L["Gain 7"] = "|cFFFFFFFF以太精華|r"
 L["Gain 7 Note"] = "致命一擊機率提高10%。"
 L["Gain 8"] = "|cFFFFFFFF鍛造師之力|r"
 L["Gain 8 Note"] = "所有傷害提高10%。"
+L["Void-Forged Engine Block"] = true
+L["Void-Forged Engine Block Note"] = true
+L["Poisons"] = true
+L["Poisons Note"] = true
 
 
 -- Waypoints
