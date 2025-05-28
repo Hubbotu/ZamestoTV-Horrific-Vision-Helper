@@ -142,6 +142,13 @@ ns.points = {
             Zamro = true,
             note = L["Gain 4 Note"],
             pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj111.tga",
+        }),	
+        [51605820] = ({
+            label = L["Poisons"],
+            cont = true,
+            Zamro = true,
+            note = L["Poisons Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\pin.tga",
         }),			
     },
     [2403] = { -- Vision of Orgrimmar
@@ -208,7 +215,7 @@ ns.points = {
             note = L["Wolf Tack Note"],
             pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj36.tga",
         }),
-        [59505400] = ({
+        [60885489] = ({
             label = L["Wolf Rug"],
             cont = true,
             Zamro = true,
@@ -249,6 +256,20 @@ ns.points = {
             Zamro = true,
             note = L["Gain 8 Note"],
             pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\obj111.tga",
-        }),			
+        }),
+        [56905669] = ({
+            label = L["Void-Forged Engine Block"],
+            cont = true,
+            Zamro = true,
+            note = L["Void-Forged Engine Block Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\mout.tga",
+        }),		
+        [46858092] = ({
+            label = L["Poisons"],
+            cont = true,
+            Zamro = true,
+            note = L["Poisons Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\pin.tga",
+        }),				
     },
 }
