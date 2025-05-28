@@ -25,7 +25,7 @@ L["Wolf Tack Note"] = "Take the item. You must have at |cFF0070DDleast 1 mask on
 L["Wolf Rug"] = "|cFFFFFFFFWolf Rug|r"
 L["Wolf Rug Note"] = "Collect Wolf Saddle and Wolf Tack. You must have at least |cFF0070DD1 mask equipped|r. Then activate Wolf Rug to get |cFFa335eeVoid-Scarred Pack Mother's Harness|r"
 L["Valley of Wisdom Elevator"] = "|cFFFFFFFFVoid-Scarred Windrider|r"
-L["Valley of Wisdom Elevator Note"] = "Clear the Valley of Wisdom. You should have at |cFF0070DDleast 3 masks on you|r. Then take the elevator to the top floor. |cFFa335eeVoid-Scarred Windrider|r"
+L["Valley of Wisdom Elevator Note"] = "Clear the Valley of Wisdom. You should have at |cFF0070DDleast 2 masks on you|r. Then take the elevator to the top floor. |cFFa335eeVoid-Scarred Windrider|r"
 L["Gain"] = "|cFFFFFFFFBear Spirit|r"
 L["Gain Note"] = "Increases haste by 10%."
 L["Gain 2"] = "|cFFFFFFFFRequited Bulwark|r"
@@ -42,6 +42,10 @@ L["Gain 7"] = "|cFFFFFFFFEthereal Essence|r"
 L["Gain 7 Note"] = "Critical Strike chance increased by 10%."
 L["Gain 8"] = "|cFFFFFFFFSmith's Strength|r"
 L["Gain 8 Note"] = "All damage increased by 10%."
+L["Void-Forged Engine Block"] = "|cFFFFFFFFVoid-Forged Inline Four Engine|r"
+L["Void-Forged Engine Block Note"] = "|cFFDC143CVoid-Forged Engine Block:|r Take it from the table in the engineering workshop, you must have at least 1 mask on. |cFFa335eeVoid-Forged Stallion's Reins|r"
+L["Poisons"] = "|cFFFFFFFFPoisons|r"
+L["Poisons Note"] = "There is a poison here that reduces sanity and cannot be drunk."
 
 -- Waypoints
 L["Create waypoint"] = true

@@ -36,7 +36,7 @@ L["Wolf Rug Note"] =
 "Colete Sela de Lobo e Acessórios de Lobo. Você deve ter pelo menos |cFF0070DD1 máscara equipada|r. Em seguida, ative o Tapete de Lobo para obter |cFFa335eeArnês da Mãe da Matilha Marcada pelo Caos|r"
 L["Valley of Wisdom Elevator"] = "|cFFFFFFFFMantícora Marcada pelo Caos|r"
 L["Valley of Wisdom Elevator Note"] =
-"Limpe o Vale da Sabedoria. Você deve ter |cFF0070DDpelo menos 3 máscaras em você|r. Depois pegue o elevador até o último andar. |cFFa335eeMantícora Marcada pelo Caos|r"
+"Limpe o Vale da Sabedoria. Você deve ter |cFF0070DDpelo menos 2 máscaras em você|r. Depois pegue o elevador até o último andar. |cFFa335eeMantícora Marcada pelo Caos|r"
 L["Gain"] = true
 L["Gain Note"] = true
 L["Gain 2"] = true
@@ -53,6 +53,10 @@ L["Gain 7"] = true
 L["Gain 7 Note"] = true
 L["Gain 8"] = true
 L["Gain 8 Note"] = true
+L["Void-Forged Engine Block"] = true
+L["Void-Forged Engine Block Note"] = true
+L["Poisons"] = true
+L["Poisons Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = true
