@@ -36,7 +36,7 @@ L["Wolf Rug Note"] =
 "Colete Sela de Lobo e Acessórios de Lobo. Você deve ter pelo menos |cFF0070DD1 máscara equipada|r. Em seguida, ative o Tapete de Lobo para obter |cFFa335eeArnês da Mãe da Matilha Marcada pelo Caos|r"
 L["Valley of Wisdom Elevator"] = "|cFFFFFFFFMantícora Marcada pelo Caos|r"
 L["Valley of Wisdom Elevator Note"] =
-"Limpe o Vale da Sabedoria. Você deve ter pelo menos |cFF0070DDleast 3 máscaras em você|r. Depois pegue o elevador até o último andar. |cFFa335eeMantícora Marcada pelo Caos|r"
+"Limpe o Vale da Sabedoria. Você deve ter |cFF0070DDpelo menos 3 máscaras em você|r. Depois pegue o elevador até o último andar. |cFFa335eeMantícora Marcada pelo Caos|r"
 L["Gain"] = true
 L["Gain Note"] = true
 L["Gain 2"] = true
@@ -64,7 +64,7 @@ L["Show icons on world map"] = true
 L["Minimap"] = true
 L["Show icons on the minimap"] = true
 L["What to display"] = true
-L["Show Zamros"] = "Show gold farming locations"
-L["Show Zamros gold"] = "Show activity points with which you can earn gold"
+L["Show Zamros"] = "Mostrar locais de farming de ouro"
+L["Show Zamros gold"] = "Mostrar pontos de atividade com os quais você pode ganhar ouro"
 L["Reset hidden nodes"] = true
 L["Show all nodes that you manually hid by right-clicking on them and choosing \"hide\"."] = true
