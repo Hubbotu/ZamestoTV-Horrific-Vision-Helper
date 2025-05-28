@@ -24,7 +24,7 @@ L["Ripped Note Note"] =
 "Você deve ter pelo menos |cFFDC143C2 mascaras ativas|r.\n\nMate o Inquisidor Umbrivox e leia a pista do Bilhete Rasgado na escada, leia outro na parede (dirá se a comida é crua ou cozida) C - crua e B - cozida.\n\n1. Agora parece que o comedor exigente só quer comer peixe. - |cFF0070DD1x Filé Fresco Filé Fresco (C) 1x Espetinho de Filé (B)|r.\n\n2. Agora parece que o comedor exigente só quer comer fungos. - |cFF0070DD1x Micoflorescência em Pedaços Micoflorescência em Pedaços (C) 1x Micoflorescência Assada (B)|r.\n\n3. Agora parece que o comedor exigente só quer comer carne temperada. - |cFF0070DD1x Caldo de Carne Temperado Caldo de Carne Temperado (C) 1x Ensopadinho (B)|r.\n\n4. Agora parece que o comedor exigente só quer comer bife. - |cFF0070DD1x Bife Porcionado Bife Porcionado (C) 1x Bife do Campo Sem Tempero (B)|r.\n\nColoque o alimento desejado na Tigela com Marca de Garra e agite-a. |cFFa335eeRédeas do Grifo Marcado pelo Caos|r"
 L["Big Keech"] = "|cFFFFFFFFGrande Keech|r"
 L["Big Keech Note"] =
-"It can drop |cFF0070DDOrbe do Mistério Atado ao Caos|r (cai para todos) e |cFF0070DDDesenho: Pantera do Cristal de Caos|r (somente joalheiro), necessário para criar |cFFa335eePantera do Cristal de Caos|r"
+"Ele pode dropar |cFF0070DDOrbe do Mistério Atado ao Caos|r (cai para todos) e |cFF0070DDDesenho: Pantera do Cristal de Caos|r (somente joalheiro), necessário para criar |cFFa335eePantera do Cristal de Caos|r"
 L["Wolf Saddle"] = "|cFFFFFFFFSela de Lobo|r"
 L["Wolf Saddle Note"] =
 "Pegue o item. Você deve ter pelo menos |cFF0070DD 1 máscara ativa|r. |cFFa335eeArnês da Mãe da Matilha Marcada pelo Caos|r"
@@ -36,7 +36,7 @@ L["Wolf Rug Note"] =
 "Colete Sela de Lobo e Acessórios de Lobo. Você deve ter pelo menos |cFF0070DD1 máscara equipada|r. Em seguida, ative o Tapete de Lobo para obter |cFFa335eeArnês da Mãe da Matilha Marcada pelo Caos|r"
 L["Valley of Wisdom Elevator"] = "|cFFFFFFFFMantícora Marcada pelo Caos|r"
 L["Valley of Wisdom Elevator Note"] =
-"Limpe o Vale da Sabedoria. Você deve ter pelo menos |cFF0070DDleast 3 máscaras em você|r. Depois pegue o elevador até o último andar. |cFFa335eeMantícora Marcada pelo Caos|r"
+"Limpe o Vale da Sabedoria. Você deve ter |cFF0070DDpelo menos 3 máscaras em você|r. Depois pegue o elevador até o último andar. |cFFa335eeMantícora Marcada pelo Caos|r"
 L["Gain"] = true
 L["Gain Note"] = true
 L["Gain 2"] = true
@@ -64,7 +64,7 @@ L["Show icons on world map"] = true
 L["Minimap"] = true
 L["Show icons on the minimap"] = true
 L["What to display"] = true
-L["Show Zamros"] = "Show gold farming locations"
-L["Show Zamros gold"] = "Show activity points with which you can earn gold"
+L["Show Zamros"] = "Mostrar locais de farming de ouro"
+L["Show Zamros gold"] = "Mostrar pontos de atividade com os quais você pode ganhar ouro"
 L["Reset hidden nodes"] = true
 L["Show all nodes that you manually hid by right-clicking on them and choosing \"hide\"."] = true
