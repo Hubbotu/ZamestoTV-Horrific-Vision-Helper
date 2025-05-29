@@ -13,6 +13,6 @@ Updated zhCN and zhTW localization (thanks to nanjuekaien1) and frFR (thanks to 
 Improved Russian localization
 
 # V 3.6.7 - Coming Soon
-Обновлена локализация zhCN (спасибо nanjuekaien1)
-Updated zhCN localization (thanks to nanjuekaien1)
+Обновлена локализация zhCN (спасибо nanjuekaien1) and zhTW (thanks to BlueNightSky)
+Updated zhCN localization (thanks to nanjuekaien1) и zhTW (спасибо BlueNightSky)
 
