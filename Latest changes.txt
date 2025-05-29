@@ -1,9 +1,11 @@
 Исправлено местоположение Ковра из шкуры волка
 Добавлено местоположение Блока цилиндров из Бездны.
 Отображени местопложения начального флакона с ядом.
-Обновлена локализация zhCN и zhTW (спасибо nanjuekaien1)
+Обновлена локализация zhCN и zhTW (спасибо nanjuekaien1) и frFR (спасибо Lightuky)
+Улучшена русская локализация
 
 Fixed Wolf Rug location
 Added Void-Forged Engine Block location
 Displays the location of the initial poison vial.
-Updated zhCN and zhTW localization (thanks to nanjuekaien1)
+Updated zhCN and zhTW localization (thanks to nanjuekaien1) and frFR (thanks to Lightuky)
+Improved Russian localization
