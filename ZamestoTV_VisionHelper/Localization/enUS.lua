@@ -43,7 +43,7 @@ L["Gain 7 Note"] = "Critical Strike chance increased by 10%."
 L["Gain 8"] = "|cFFFFFFFFSmith's Strength|r"
 L["Gain 8 Note"] = "All damage increased by 10%."
 L["Void-Forged Engine Block"] = "|cFFFFFFFFVoid-Forged Inline Four Engine|r"
-L["Void-Forged Engine Block Note"] = "|cFFDC143CVoid-Forged Engine Block:|r Take it from the table in the engineering workshop, you must have at least 1 mask on. |cFFa335eeVoid-Forged Stallion's Reins|r"
+L["Void-Forged Engine Block Note"] = "|cFFDC143CVoid-Forged Engine Block:|r Take it from the table in the engineering workshop, you must have at least 1 mask on. |cFFa335eeFelreaver Deathcycle|r"
 L["Poisons"] = "|cFFFFFFFFPoisons|r"
 L["Poisons Note"] = "There is a poison here that reduces sanity and cannot be drunk."
 
