@@ -11,3 +11,6 @@ Added Void-Forged Engine Block location
 Displays the location of the initial poison vial.
 Updated zhCN and zhTW localization (thanks to nanjuekaien1) and frFR (thanks to Lightuky)
 Improved Russian localization
+
+# V 3.6.7
+Coming Soon
