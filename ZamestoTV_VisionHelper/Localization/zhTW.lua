@@ -42,10 +42,10 @@ L["Gain 7"] = "|cFFFFFFFF以太精華|r"
 L["Gain 7 Note"] = "致命一擊機率提高10%。"
 L["Gain 8"] = "|cFFFFFFFF鍛造師之力|r"
 L["Gain 8 Note"] = "所有傷害提高10%。"
-L["Void-Forged Engine Block"] = true
-L["Void-Forged Engine Block Note"] = true
-L["Poisons"] = true
-L["Poisons Note"] = true
+L["Void-Forged Engine Block"] = "虛無鑄造直列四缸引擎"
+L["Void-Forged Engine Block Note"] = "|cFFDC143C虛無鑄造引擎本體:|r 從工程工坊的桌上獲取，你必須至少啟用一個面具。|cFFa335ee虛無鑄造戰馬韁繩|r"
+L["Poisons"] = "|cFFFFFFF毒藥|r"
+L["Poisons Note"] = "這裡可看到一種不能喝的降理智的毒藥。"
 
 
 -- Waypoints
