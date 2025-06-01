@@ -14,5 +14,8 @@ Improved Russian localization
 
 # V 3.6.7 - Coming Soon
 Обновлена локализация zhCN (спасибо nanjuekaien1) and zhTW (thanks to BlueNightSky)
+Добавлены места появления Письмоеда
+
 Updated zhCN localization (thanks to nanjuekaien1) и zhTW (спасибо BlueNightSky)
+Added Mail Muncher spawn locations
 
