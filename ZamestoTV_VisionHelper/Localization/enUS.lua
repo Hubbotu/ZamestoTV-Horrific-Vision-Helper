@@ -46,6 +46,8 @@ L["Void-Forged Engine Block"] = "|cFFFFFFFFVoid-Forged Inline Four Engine|r"
 L["Void-Forged Engine Block Note"] = "|cFFDC143CVoid-Forged Engine Block:|r Take it from the table in the engineering workshop, you must have at least 1 mask on. |cFFa335eeFelreaver Deathcycle|r"
 L["Poisons"] = "|cFFFFFFFFPoisons|r"
 L["Poisons Note"] = "There is a poison here that reduces sanity and cannot be drunk."
+L["Mail"] = "|cFFFFFFFFMailbox|r"
+L["Mail Note"] = "When opened, the Mail Muncher has a chance to spawn."
 
 -- Waypoints
 L["Create waypoint"] = true

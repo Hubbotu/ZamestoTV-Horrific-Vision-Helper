@@ -57,6 +57,8 @@ L["Void-Forged Engine Block"] = true
 L["Void-Forged Engine Block Note"] = true
 L["Poisons"] = true
 L["Poisons Note"] = true
+L["Mail"] = true
+L["Mail Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = true

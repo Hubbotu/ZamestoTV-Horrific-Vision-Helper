@@ -46,6 +46,8 @@ L["Void-Forged Engine Block"] = "|cFFFFFFFFMoteur quatre cylindres en ligne forg
 L["Void-Forged Engine Block Note"] = "|cFFDC143CBloc moteur forgé par le Vide :|r Prenez-le sur la table de l'atelier d'ingénierie, vous devez porter au moins un masque. |cFFa335eeCyclomort de saccageur gangrené|r"
 L["Poisons"] = "|cFFFFFFFFPoisons|r"
 L["Poisons Note"] = "Il y a ici un poison qui réduit la santé mentale et qui ne doit être bu."
+L["Mail"] = true
+L["Mail Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = "Créer un point de passage"
