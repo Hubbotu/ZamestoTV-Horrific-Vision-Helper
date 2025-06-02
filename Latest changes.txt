@@ -12,7 +12,7 @@ Displays the location of the initial poison vial.
 Updated zhCN and zhTW localization (thanks to nanjuekaien1) and frFR (thanks to Lightuky)
 Improved Russian localization
 
-# V 3.7 - Coming Soon
+# V 3.7 - 02.06.2025
 Обновлена локализация zhCN (спасибо nanjuekaien1) and zhTW (thanks to BlueNightSky)
 Добавлены места появления Письмоеда
 Написан с нуля модуль "Сундуки и Кристаллы", с поддержкой всех языков.
@@ -21,3 +21,4 @@ Updated zhCN localization (thanks to nanjuekaien1) и zhTW (спасибо BlueN
 Added Mail Muncher spawn locations
 The "Chests and Crystals" module was written from scratch, with support for all languages.
 
+# V 3.7.1 - Coming Soon
