@@ -22,3 +22,6 @@ Added Mail Muncher spawn locations
 The "Chests and Crystals" module was written from scratch, with support for all languages.
 
 # V 3.7.1 - Coming Soon
+Обновлена локализация frFR (спасибо Lightuky)
+
+Updated frFR localization (thanks to Lightuky)
