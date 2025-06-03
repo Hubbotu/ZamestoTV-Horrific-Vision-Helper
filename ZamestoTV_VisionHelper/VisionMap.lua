@@ -185,6 +185,20 @@ ns.points = {
             note = L["Mail Note"],
             pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\mail.tga",
         }),		
+        [55337550] = ({
+            label = L["Nemesis"],
+            cont = true,
+            Zamro = true,
+            note = L["Nemesis Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\pin.tga",
+        }),		
+        [71206960] = ({
+            label = L["Vengeance"],
+            cont = true,
+            Zamro = true,
+            note = L["Vengeance Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\pin.tga",
+        }),				
     },
     [2403] = { -- Vision of Orgrimmar
         [70503320] = ({
@@ -304,7 +318,7 @@ ns.points = {
             cont = true,
             Zamro = true,
             note = L["Poisons Note"],
-            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\pin.tga",
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\Poisons.tga",
         }),	
         [39304900] = ({
             label = L["Mail"],
@@ -340,6 +354,13 @@ ns.points = {
             Zamro = true,
             note = L["Mail Note"],
             pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\mail.tga",
+        }),		
+        [54807908] = ({
+            label = L["Nemesis"],
+            cont = true,
+            Zamro = true,
+            note = L["Nemesis Note"],
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\pin.tga",
         }),			
     },
 }
