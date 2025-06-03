@@ -48,6 +48,10 @@ L["Poisons"] = "|cFFFFFFF毒藥|r"
 L["Poisons Note"] = "這裡可看到一種不能喝的降理智的毒藥。"
 L["Mail"] = true
 L["Mail Note"] = true
+L["Nemesis"] = true
+L["Nemesis Note"] = true
+L["Vengeance"] = true
+L["Vengeance Note"] = true
 
 
 -- Waypoints

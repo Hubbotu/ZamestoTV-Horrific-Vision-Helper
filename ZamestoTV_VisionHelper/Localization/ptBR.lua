@@ -59,6 +59,10 @@ L["Poisons"] = true
 L["Poisons Note"] = true
 L["Mail"] = true
 L["Mail Note"] = true
+L["Nemesis"] = true
+L["Nemesis Note"] = true
+L["Vengeance"] = true
+L["Vengeance Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = true

@@ -48,6 +48,10 @@ L["Poisons"] = "|cFFFFFFFFPoisons|r"
 L["Poisons Note"] = "Il y a ici un poison qui réduit la santé mentale et qui ne doit être bu."
 L["Mail"] = "|cFFFFFFFFBoîtes aux lettres|r"
 L["Mail Note"] = "Une fois ouverte, Mâche-Courrier a une chance d'apparaître."
+L["Nemesis"] = true
+L["Nemesis Note"] = true
+L["Vengeance"] = true
+L["Vengeance Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = "Créer un point de passage"

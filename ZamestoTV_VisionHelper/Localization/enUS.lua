@@ -48,6 +48,10 @@ L["Poisons"] = "|cFFFFFFFFPoisons|r"
 L["Poisons Note"] = "There is a poison here that reduces sanity and cannot be drunk."
 L["Mail"] = "|cFFFFFFFFMailbox|r"
 L["Mail Note"] = "When opened, the Mail Muncher has a chance to spawn."
+L["Nemesis"] = "|cFFFFFFFFFaceless Mask of the Nemesis|r"
+L["Nemesis Note"] = "Contains some of the items needed to assemble this mask. You must have at |cFF0070DDleast 1 mask on|r"
+L["Vengeance"] = "|cFFFFFFFFFaceless Mask of Vengeance|r"
+L["Vengeance Note"] = "Defeat the monsters and remove the mask from the pole. You must have at |cFF0070DDleast 1 mask on|r"
 
 -- Waypoints
 L["Create waypoint"] = true
