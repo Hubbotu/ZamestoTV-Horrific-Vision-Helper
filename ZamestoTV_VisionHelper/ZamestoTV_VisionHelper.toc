@@ -13,8 +13,8 @@
 ## Notes-zhTW: 恐怖幻象助手
 ## Author: ZamestoTV
 ## IconTexture: Interface\AddOns\ZamestoTV_VisionHelper\Icons\goblin
-## Version: 3.7
-## SavedVariables: HVTDB, ZamestoTV_Settings, HorrificVisionTrackerDB, ZamestoTV_VisionHelperDB, AVNS_SavedVars
+## Version: 3.7.4
+## SavedVariables: HVTDB, ZamestoTV_Settings, HorrificVisionTrackerDB, ZamestoTV_VisionHelperDB, AVNS_SavedVars, state, ZMON_SavedVars
 ## SavedVariablesPerCharacter: TrakPos
 ## X-Category: Map
 ## X-Localizations: enUS, frFR, ruRU, ptBR, zhCN, zhTW
