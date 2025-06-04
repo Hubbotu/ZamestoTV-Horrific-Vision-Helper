@@ -148,7 +148,7 @@ ns.points = {
             cont = true,
             Zamro = true,
             note = L["Poisons Note"],
-            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\pin.tga",
+            pathto = "Interface\\Addons\\" .. myname .. "\\Icons\\Poisons.tga",
         }),	
         [49688700] = ({
             label = L["Mail"],
