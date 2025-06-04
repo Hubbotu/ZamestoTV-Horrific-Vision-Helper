@@ -48,10 +48,10 @@ L["Poisons"] = "|cFFFFFFFFPoisons|r"
 L["Poisons Note"] = "Il y a ici un poison qui réduit la santé mentale et qui ne doit être bu."
 L["Mail"] = "|cFFFFFFFFBoîtes aux lettres|r"
 L["Mail Note"] = "Une fois ouverte, Mâche-Courrier a une chance d'apparaître."
-L["Nemesis"] = true
-L["Nemesis Note"] = true
-L["Vengeance"] = true
-L["Vengeance Note"] = true
+L["Nemesis"] = "|cFFFFFFFFMasque sans-visage de Némésis|r"
+L["Nemesis Note"] = "Donne un des deux objets nécessaires à la fabrication de ce masque. Vous devez avoir |cFF0070DDau moins 1 masque actif|r"
+L["Vengeance"] = "|cFFFFFFFFMasque sans-visage de vengeance|r"
+L["Vengeance Note"] = "Tuez les monstres et retirez le masque du poteau. Vous devez avoir |cFF0070DDau moins 1 masque actif|r"
 
 -- Waypoints
 L["Create waypoint"] = "Créer un point de passage"
