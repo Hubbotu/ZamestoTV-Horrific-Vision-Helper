@@ -46,12 +46,12 @@ L["Void-Forged Engine Block"] = "|cFFFFFFFF虚铸直列四缸发动机|r"
 L["Void-Forged Engine Block Note"] = "|cFFDC143C虚铸引擎机体：|r 需装备|cFF0070DD至少1个面具，在暗巷区的工程车间的桌子上拾取。 |cFFa335ee魔能机甲亡命摩托|r"
 L["Poisons"] = "|cFFFFFFFF毒药|r"
 L["Poisons Note"] = "这是一种会降低理智且不要饮用的坏药水。"
-L["Mail"] = true
-L["Mail Note"] = true
-L["Nemesis"] = true
-L["Nemesis Note"] = true
-L["Vengeance"] = true
-L["Vengeance Note"] = true
+L["Mail"] = "|cFFFFFFFF邮箱|r"
+L["Mail Note"] = "打开邮箱时，有几率出现邮件吞噬者。"
+L["Nemesis"] = "|cFFFFFFFF无面者的面具：宿敌|r"
+L["Nemesis Note"] = "需装备|cFF0070DD至少1个面具|r，在奥格和暴风击杀召唤稀有加摩尔和霍格拾取宿敌碎片合成后获得。"
+L["Vengeance"] = "|cFFFFFFFF无面者的面具：复仇|r"
+L["Vengeance Note"] = "需装备|cFF0070DD至少1个面具|r，在暴风城幻象的贸易区与旧城区运河边（71.3 69.7）击杀完小怪，点击后方木棍上的面具获得。"
 
 -- Waypoints
 L["Create waypoint"] = "创建路径点"
