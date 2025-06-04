@@ -21,7 +21,7 @@ Updated zhCN localization (thanks to nanjuekaien1) и zhTW (thanks BlueNightSky)
 Added Mail Muncher spawn locations
 The "Chests and Crystals" module was written from scratch, with support for all languages.
 
-# V 3.7.4 - Coming Soon
+# V 3.7.4 - 04.06.2025
 Обновлена локализация frFR (спасибо Lightuky)
 Местоположение Безликая маска возмездия
 Местоположение Безликая маска заклятого врага
@@ -31,3 +31,5 @@ Updated frFR localization (thanks to Lightuky)
 Location Faceless Mask of Vengeance
 Location Faceless Mask of the Nemesis
 Changed the icon for displaying the initial poison.
+
+# V 3.7.5 - Coming Soon
