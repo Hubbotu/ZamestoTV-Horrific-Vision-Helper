@@ -33,3 +33,8 @@ Location Faceless Mask of the Nemesis
 Changed the icon for displaying the initial poison.
 
 # V 3.7.5 - Coming Soon
+Обновлена локализация zhCN (спасибо nanjuekaien1)
+Изменена иконка для отображения начального яда.
+
+Updated zhCN localization (thanks to nanjuekaien1)
+Changed the icon for displaying the initial poison.
