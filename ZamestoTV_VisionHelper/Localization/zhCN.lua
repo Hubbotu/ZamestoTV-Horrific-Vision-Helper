@@ -52,6 +52,8 @@ L["Nemesis"] = "|cFFFFFFFF无面者的面具：宿敌|r"
 L["Nemesis Note"] = "需装备|cFF0070DD至少1个面具|r，在奥格和暴风击杀召唤稀有加摩尔和霍格拾取宿敌碎片合成后获得。"
 L["Vengeance"] = "|cFFFFFFFF无面者的面具：复仇|r"
 L["Vengeance Note"] = "需装备|cFF0070DD至少1个面具|r，在暴风城幻象的贸易区与旧城区运河边（71.3 69.7）击杀完小怪，点击后方木棍上的面具获得。"
+L["oddcrystal"] = true
+L["oddcrystal Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = "创建路径点"

@@ -52,6 +52,8 @@ L["Nemesis"] = "|cFFFFFFFFMasque sans-visage de Némésis|r"
 L["Nemesis Note"] = "Donne un des deux objets nécessaires à la fabrication de ce masque. Vous devez avoir |cFF0070DDau moins 1 masque actif|r"
 L["Vengeance"] = "|cFFFFFFFFMasque sans-visage de vengeance|r"
 L["Vengeance Note"] = "Tuez les monstres et retirez le masque du poteau. Vous devez avoir |cFF0070DDau moins 1 masque actif|r"
+L["oddcrystal"] = true
+L["oddcrystal Note"] = true
 
 -- Waypoints
 L["Create waypoint"] = "Créer un point de passage"

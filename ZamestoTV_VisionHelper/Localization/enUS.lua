@@ -52,6 +52,8 @@ L["Nemesis"] = "|cFFFFFFFFFaceless Mask of the Nemesis|r"
 L["Nemesis Note"] = "Contains some of the items needed to assemble this mask. You must have at |cFF0070DDleast 1 mask on|r"
 L["Vengeance"] = "|cFFFFFFFFFaceless Mask of Vengeance|r"
 L["Vengeance Note"] = "Defeat the monsters and remove the mask from the pole. You must have at |cFF0070DDleast 1 mask on|r"
+L["oddcrystal"] = "|cFFFFFFFFOdd Crystal|r"
+L["oddcrystal Note"] = "Location of Odd Crystal"
 
 -- Waypoints
 L["Create waypoint"] = true

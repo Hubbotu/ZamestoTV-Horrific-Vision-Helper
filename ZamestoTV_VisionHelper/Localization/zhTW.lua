@@ -52,6 +52,8 @@ L["Nemesis"] = true
 L["Nemesis Note"] = true
 L["Vengeance"] = true
 L["Vengeance Note"] = true
+L["oddcrystal"] = true
+L["oddcrystal Note"] = true
 
 
 -- Waypoints
