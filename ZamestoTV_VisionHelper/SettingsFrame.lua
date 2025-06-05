@@ -131,70 +131,40 @@ frame.chestsText:SetFont("Fonts\\Arial.TTF", 16, "OUTLINE")
 frame.chestsText:SetTextColor(1, 1, 1, 1)
 frame.chestsText:SetText("Chests and Crystals:")
 
--- Create Storm button
-local stormButton = CreateFrame("Button", "AVNS_StormButton", frame, "UIPanelButtonTemplate")
-stormButton:SetSize(60, 25)
-stormButton:SetPoint("TOPLEFT", frame.chestsText, "BOTTOMLEFT", 0, -10)
-stormButton:SetText("Storm")
+-- Create Show button
+local showButton = CreateFrame("Button", "AVNS_ShowButton", frame, "UIPanelButtonTemplate")
+showButton:SetSize(60, 25)
+showButton:SetPoint("TOPLEFT", frame.chestsText, "BOTTOMLEFT", 0, -10)
+showButton:SetText("Show")
 
 -- Style button text
-stormButton.text = stormButton:GetFontString()
-stormButton.text:SetFont("Fonts\\Arial.TTF", 14, "OUTLINE")
-stormButton.text:SetTextColor(1, 1, 1, 1)
+showButton.text = showButton:GetFontString()
+showButton.text:SetFont("Fonts\\Arial.TTF", 14, "OUTLINE")
+showButton.text:SetTextColor(1, 1, 1, 1)
 
--- Add tooltip to the Storm button
-stormButton:SetScript("OnEnter", function(self)
+-- Add tooltip to the Show button
+showButton:SetScript("OnEnter", function(self)
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:SetText("show Stormwind frame")
+    GameTooltip:SetText("Show chests and crystals")
     GameTooltip:Show()
 end)
-stormButton:SetScript("OnLeave", function()
+showButton:SetScript("OnLeave", function()
     GameTooltip:Hide()
 end)
 
--- Button click to run /zstorm command
-stormButton:SetScript("OnClick", function()
-    if SlashCmdList and SlashCmdList["ZSTORM"] then
-        SlashCmdList["ZSTORM"]("")
+-- Button click to run /zmon command
+showButton:SetScript("OnClick", function()
+    if SlashCmdList and SlashCmdList["ZMON"] then
+        SlashCmdList["ZMON"]("")
     else
-        print("Error: /zstorm command not found. Ensure the addon defining /zstorm is enabled.")
-    end
-end)
-
--- Create Orgri button
-local orgriButton = CreateFrame("Button", "AVNS_OrgriButton", frame, "UIPanelButtonTemplate")
-orgriButton:SetSize(60, 25)
-orgriButton:SetPoint("LEFT", stormButton, "RIGHT", 5, 0)
-orgriButton:SetText("Orgri")
-
--- Style button text
-orgriButton.text = orgriButton:GetFontString()
-orgriButton.text:SetFont("Fonts\\Arial.TTF", 14, "OUTLINE")
-orgriButton.text:SetTextColor(1, 1, 1, 1)
-
--- Add tooltip to the Orgri button
-orgriButton:SetScript("OnEnter", function(self)
-    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:SetText("show Orgrimmar frame")
-    GameTooltip:Show()
-end)
-orgriButton:SetScript("OnLeave", function()
-    GameTooltip:Hide()
-end)
-
--- Button click to run /zorgri command
-orgriButton:SetScript("OnClick", function()
-    if SlashCmdList and SlashCmdList["ZORGRI"] then
-        SlashCmdList["ZORGRI"]("")
-    else
-        print("Error: /zorgri command not found. Ensure the addon defining /zorgri is enabled.")
+        print("Error: /zmon command not found. Ensure the addon defining /zmon is enabled.")
     end
 end)
 
 -- Create Hide button
 local hideButton = CreateFrame("Button", "AVNS_HideButton", frame, "UIPanelButtonTemplate")
 hideButton:SetSize(60, 25)
-hideButton:SetPoint("LEFT", orgriButton, "RIGHT", 5, 0)
+hideButton:SetPoint("LEFT", showButton, "RIGHT", 5, 0)
 hideButton:SetText("Hide")
 
 -- Style button text
@@ -205,19 +175,19 @@ hideButton.text:SetTextColor(1, 1, 1, 1)
 -- Add tooltip to the Hide button
 hideButton:SetScript("OnEnter", function(self)
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:SetText("hide")
+    GameTooltip:SetText("Hide chests and crystals")
     GameTooltip:Show()
 end)
 hideButton:SetScript("OnLeave", function()
     GameTooltip:Hide()
 end)
 
--- Button click to run /zhide command
+-- Button click to run /zmoff command
 hideButton:SetScript("OnClick", function()
-    if SlashCmdList and SlashCmdList["ZHIDE"] then
-        SlashCmdList["ZHIDE"]("")
+    if SlashCmdList and SlashCmdList["ZMOFF"] then
+        SlashCmdList["ZMOFF"]("")
     else
-        print("Error: /zhide command not found. Ensure the addon defining /zhide is enabled.")
+        print("Error: /zmoff command not found. Ensure the addon defining /zmoff is enabled.")
     end
 end)
 
