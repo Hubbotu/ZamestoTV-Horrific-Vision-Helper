@@ -32,9 +32,13 @@ Location Faceless Mask of Vengeance
 Location Faceless Mask of the Nemesis
 Changed the icon for displaying the initial poison.
 
-# V 3.7.5 - Coming Soon
+# V 3.8 - Coming Soon
 Обновлена локализация zhCN (спасибо nanjuekaien1)
 Изменена иконка для отображения начального яда.
+Исправлено отображения фрема Сундуки и Кристаллы.
+Теперь фрем Сундуки и Кристаллы отображаеться ТОЛЬКО в видениях.
 
 Updated zhCN localization (thanks to nanjuekaien1)
 Changed the icon for displaying the initial poison.
+Fixed display of Chests and Crystals frame.
+Now Chests and Crystals frame is displayed ONLY in visions.
