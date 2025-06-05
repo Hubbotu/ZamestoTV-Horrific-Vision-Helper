@@ -392,6 +392,43 @@ local function CreateButtons(frame)
     end)
 end
 
+-- Update progress bars based on current mapID
+local function UpdateBarsForMap(mapID)
+    if not names[mapID] then
+        mapID = 2403 -- Fallback to Orgrimmar if mapID is invalid
+    end
+
+    -- Clear existing bars
+    for _, bar in pairs(state.bars) do
+        bar:Hide()
+        bar = nil
+    end
+    state.bars = {}
+
+    -- Create new bars for the current map
+    for i = 1, 5 do
+        local bar = CreateProgressBar(i, names[mapID][i], i == 1 and 3 or 2, false)
+        state.bars[format("%s-chest", i)] = bar
+        if state.crystalsEnabled then
+            local crystalBar = CreateProgressBar(i, "", 2, true)
+            state.bars[format("%s-crystal", i)] = crystalBar
+        end
+    end
+
+    -- Position the bars
+    local spacing = 1
+    local limit = 5
+    local countX, countY = 0, 0
+    for _, bar in pairs(state.bars) do
+        bar:SetPoint("TOPLEFT", state.uiFrame, "TOPLEFT", (bar:GetWidth() + spacing) * countX, -(bar:GetHeight() + spacing) * countY)
+        countY = countY + 1
+        if countY == limit and countX == 0 then
+            countY = 0
+            countX = countX + 1
+        end
+    end
+end
+
 -- Initialize UI
 local function InitializeUI()
     local frame = CreateFrame("Frame", addonName .. "Frame", UIParent, "BackdropTemplate")
@@ -417,32 +454,6 @@ local function InitializeUI()
         self:StopMovingOrSizing()
     end)
     
-    local mapID = C_Map.GetBestMapForUnit("player")
-    if not names[mapID] then
-        mapID = 2403 -- Fallback to Orgrimmar if mapID is invalid
-    end
-    
-    for i = 1, 5 do
-        local bar = CreateProgressBar(i, names[mapID][i], i == 1 and 3 or 2, false)
-        state.bars[format("%s-chest", i)] = bar
-        if state.crystalsEnabled then
-            local crystalBar = CreateProgressBar(i, "", 2, true)
-            state.bars[format("%s-crystal", i)] = crystalBar
-        end
-    end
-    
-    local spacing = 1
-    local limit = 5
-    local countX, countY = 0, 0
-    for _, bar in pairs(state.bars) do
-        bar:SetPoint("TOPLEFT", frame, "TOPLEFT", (bar:GetWidth() + spacing) * countX, -(bar:GetHeight() + spacing) * countY)
-        countY = countY + 1
-        if countY == limit and countX == 0 then
-            countY = 0
-            countX = countX + 1
-        end
-    end
-    
     CreateButtons(frame)
     
     frame:Hide()
@@ -458,21 +469,25 @@ SlashCmdList["ZMON"] = function()
     state.isFrozen = false
     ZMON_SavedVars.isFrozen = false -- Save to persistent storage
     if state.uiFrame then
-        state.uiFrame:Show()
-        state.uiFrame:SetBackdrop({
-            tile = true, tileSize = 16, edgeSize = 16,
-            insets = { left = 4, right = 4, top = 4, bottom = 4 },
-        })
-        state.uiFrame:SetBackdropColor(1, 1, 1, 0.5)
-        state.uiFrame:SetBackdropBorderColor(0, 0, 0, 1)
-        state.uiFrame:EnableMouse(true)
+        local mapID = C_Map.GetBestMapForUnit("player")
+        if mapID and (mapID == 2403 or mapID == 2404 or mapID == 1469 or mapID == 1470) then
+            UpdateBarsForMap(mapID)
+            state.uiFrame:Show()
+            state.uiFrame:SetBackdrop({
+                tile = true, tileSize = 16, edgeSize = 16,
+                insets = { left = 4, right = 4, top = 4, bottom = 4 },
+            })
+            state.uiFrame:SetBackdropColor(1, 1, 1, 0.5)
+            state.uiFrame:SetBackdropBorderColor(0, 0, 0, 1)
+            state.uiFrame:EnableMouse(true)
+            for _, bar in pairs(state.bars) do
+                bar:Show()
+                bar:EnableMouse(true)
+            end
+            if _G[addonName .. "ResetButton"] then _G[addonName .. "ResetButton"]:Show() end
+            if _G[addonName .. "CloseButton"] then _G[addonName .. "CloseButton"]:Show() end
+        end
     end
-    for _, bar in pairs(state.bars) do
-        bar:Show()
-        bar:EnableMouse(true)
-    end
-    if _G[addonName .. "ResetButton"] then _G[addonName .. "ResetButton"]:Show() end
-    if _G[addonName .. "CloseButton"] then _G[addonName .. "CloseButton"]:Show() end
 end
 
 -- Slash command to hide the frame
@@ -502,6 +517,7 @@ eventFrame:RegisterEvent("LOOT_CLOSED")
 eventFrame:RegisterEvent("CURRENCY_DISPLAY_UPDATE")
 eventFrame:RegisterEvent("CHAT_MSG_ADDON")
 eventFrame:RegisterEvent("PLAYER_ENTERING_WORLD")
+eventFrame:RegisterEvent("ZONE_CHANGED")
 
 C_ChatInfo.RegisterAddonMessagePrefix("TVISIONS_LOOT")
 
@@ -511,10 +527,11 @@ eventFrame:SetScript("OnEvent", function(self, event, ...)
         ZMON_SavedVars = ZMON_SavedVars or {}
         state.isFrozen = ZMON_SavedVars.isFrozen or false
         -- UI already initialized at startup
-    elseif event == "PLAYER_ENTERING_WORLD" then
+    elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED" then
         local mapID = C_Map.GetBestMapForUnit("player")
         if state.uiFrame then
             if not state.isFrozen and mapID and (mapID == 2403 or mapID == 2404 or mapID == 1469 or mapID == 1470) then
+                UpdateBarsForMap(mapID) -- Update bars for the current map
                 state.uiFrame:Show()
                 state.uiFrame:SetBackdrop({
                     tile = true, tileSize = 16, edgeSize = 16,
