@@ -47,5 +47,7 @@ Location of Odd Crystal
 
 # V 3.8.1 - Coming Soon
 Обновлена локализация frFR (спасибо Lightuky)
+Обновлена локализация zhCN (спасибо nanjuekaien1)
 
 Updated frFR localization (thanks to Lightuky)
+Updated zhCN localization (thanks to nanjuekaien1)
