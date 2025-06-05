@@ -46,3 +46,6 @@ Now Chests and Crystals frame is displayed ONLY in visions.
 Location of Odd Crystal
 
 # V 3.8.1 - Coming Soon
+Обновлена локализация frFR (спасибо Lightuky)
+
+Updated frFR localization (thanks to Lightuky)
