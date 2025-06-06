@@ -127,7 +127,7 @@ local localization = {
         ["Old Town"] = "구 시가지",
         ["Trade District"] = "상업 지구",
         ["Mage Quarter"] = "마법사 지구",
-        ["Valley of Strength"] = "힘의 골짜기",
+        ["Valley of Speed"] = "힘의 골짜기",
         ["Valley of Spirits"] = "정령의 골짜기",
         ["Valley of Wisdom"] = "지혜의 골짜기",
         ["The Drag"] = "골목길",
@@ -405,26 +405,34 @@ local function UpdateBarsForMap(mapID)
     end
     state.bars = {}
 
-    -- Create new bars for the current map
+    -- Create chest bars for the first column
     for i = 1, 5 do
         local bar = CreateProgressBar(i, names[mapID][i], i == 1 and 3 or 2, false)
         state.bars[format("%s-chest", i)] = bar
-        if state.crystalsEnabled then
+    end
+
+    -- Create crystal bars for the second column
+    if state.crystalsEnabled then
+        for i = 1, 5 do
             local crystalBar = CreateProgressBar(i, "", 2, true)
             state.bars[format("%s-crystal", i)] = crystalBar
         end
     end
 
-    -- Position the bars
+    -- Position the bars: first column for chests, second column for crystals
     local spacing = 1
-    local limit = 5
-    local countX, countY = 0, 0
-    for _, bar in pairs(state.bars) do
-        bar:SetPoint("TOPLEFT", state.uiFrame, "TOPLEFT", (bar:GetWidth() + spacing) * countX, -(bar:GetHeight() + spacing) * countY)
-        countY = countY + 1
-        if countY == limit and countX == 0 then
-            countY = 0
-            countX = countX + 1
+    local barWidth = 60
+    local barHeight = 30
+    for i = 1, 5 do
+        local chestBar = state.bars[format("%s-chest", i)]
+        if chestBar then
+            chestBar:SetPoint("TOPLEFT", state.uiFrame, "TOPLEFT", 0, -(barHeight + spacing) * (i - 1))
+        end
+        if state.crystalsEnabled then
+            local crystalBar = state.bars[format("%s-crystal", i)]
+            if crystalBar then
+                crystalBar:SetPoint("TOPLEFT", state.uiFrame, "TOPLEFT", barWidth + spacing, -(barHeight + spacing) * (i - 1))
+            end
         end
     end
 end
