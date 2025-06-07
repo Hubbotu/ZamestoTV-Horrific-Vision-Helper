@@ -166,7 +166,7 @@ HVT.strings = HVT.locale == "ruRU" and {
     ["Time left initial"] = "남은 시간: N/A",
     ["Sanity initial"] = "이성: 0",
     ["Sanity loss from hits initial"] = "맞아서 잃은 이성: 0"
-}or HVT.locale == "zhCN" and  {
+} or HVT.locale == "zhCN" and  {
     ["Time left"] = "剩余时间：%s",
     ["Sanity"] = "理智: %d",
     ["Sanity loss from hits"] = "理智损失（受攻击）: %d",
