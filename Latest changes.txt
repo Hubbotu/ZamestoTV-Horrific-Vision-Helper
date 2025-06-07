@@ -48,6 +48,8 @@ Location of Odd Crystal
 # V 3.8.1 - Coming Soon
 Обновлена локализация frFR (спасибо Lightuky)
 Обновлена локализация zhCN (спасибо nanjuekaien1)
+Исправлен модуль "Сундуки и Кристаллы", теперь отображает все правильно.
 
 Updated frFR localization (thanks to Lightuky)
 Updated zhCN localization (thanks to nanjuekaien1)
+Fixed the "Chests and Crystals" module, now it displays everything correctly.
