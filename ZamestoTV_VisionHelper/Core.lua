@@ -127,7 +127,7 @@ local localization = {
         ["Old Town"] = "구 시가지",
         ["Trade District"] = "상업 지구",
         ["Mage Quarter"] = "마법사 지구",
-        ["Valley of Strength"] = "힘의 골짜기",
+        ["Valley of Speed"] = "힘의 골짜기",
         ["Valley of Spirits"] = "정령의 골짜기",
         ["Valley of Wisdom"] = "지혜의 골짜기",
         ["The Drag"] = "골목길",
@@ -307,7 +307,7 @@ local function CreateProgressBar(index, name, total, isCrystal)
     valueText:SetText("0/" .. total)
     
     local iconText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    local yOffset = isCrystal and (index == 1 and 125 or 3) or (index == 1 and 95 or 3)
+    local yOffset = isCrystal and (index == 1 and 5 or 3) or (index == 1 and 5 or 3)
     iconText:SetPoint("BOTTOM", frame, "TOP", 0, yOffset)
     iconText:SetTextColor(1, 1, 1, 1)
     iconText:SetFont("Fonts\\FRIZQT__.TTF", 28, "OUTLINE")
