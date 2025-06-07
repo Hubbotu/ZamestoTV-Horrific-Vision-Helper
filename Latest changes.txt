@@ -45,7 +45,7 @@ Fixed display of Chests and Crystals frame.
 Now Chests and Crystals frame is displayed ONLY in visions.
 Location of Odd Crystal
 
-# V 3.8.1 - Coming Soon
+# V 3.8.2 - 07.06.2025
 Обновлена локализация frFR (спасибо Lightuky)
 Обновлена локализация zhCN (спасибо nanjuekaien1)
 Исправлен модуль "Сундуки и Кристаллы", теперь отображает все правильно.
@@ -53,3 +53,5 @@ Location of Odd Crystal
 Updated frFR localization (thanks to Lightuky)
 Updated zhCN localization (thanks to nanjuekaien1)
 Fixed the "Chests and Crystals" module, now it displays everything correctly.
+
+# V 3.8.3 - Coming Soon
