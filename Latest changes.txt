@@ -56,5 +56,7 @@ Fixed the "Chests and Crystals" module, now it displays everything correctly.
 
 # V 3.8.3 - Coming Soon
 Добавлена локализация koKR (спасибо seanoh1989)
+Обновлена локализация ptBR (спасибо jezuix)
 
 Add koKR localization (thanks to seanoh1989)
+Updated ptBR localization (thanks to jezuix)
