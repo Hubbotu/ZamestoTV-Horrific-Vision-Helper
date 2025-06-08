@@ -55,3 +55,6 @@ Updated zhCN localization (thanks to nanjuekaien1)
 Fixed the "Chests and Crystals" module, now it displays everything correctly.
 
 # V 3.8.3 - Coming Soon
+Добавлена локализация koKR (спасибо seanoh1989)
+
+Add koKR localization (thanks to seanoh1989)
