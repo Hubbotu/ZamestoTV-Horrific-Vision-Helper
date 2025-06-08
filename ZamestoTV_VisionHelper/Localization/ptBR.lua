@@ -59,7 +59,7 @@ L["Void-Forged Engine Block Note"] =
 L["Poisons"] = "|cFFFFFFFFVenenos|r"
 L["Poisons Note"] = "Há um veneno aqui que reduz a sanidade e não pode deve bebido."
 L["Mail"] = "|cFFFFFFFFCaixa de Correio|r"
-L["Mail Note"] = "Quando aberto, o Papa-carta tem uma chance de aparecer."
+L["Mail Note"] = "Quando aberto, o |cFFa335eePapa-carta|r tem uma chance de aparecer."
 L["Nemesis"] = "|cFFFFFFFFMáscara Sem-rosto da Nêmesis|r"
 L["Nemesis Note"] =
 "Contém alguns dos itens necessários para montar esta máscara. Você deve ter pelo menos |cFF0070DD1 máscara ativa|r"
