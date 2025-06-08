@@ -27,16 +27,16 @@ L["Big Keech Note"] =
 "Ele pode dropar |cFF0070DDOrbe do Mistério Atado ao Caos|r (cai para todos) e |cFF0070DDDesenho: Pantera do Cristal de Caos|r (somente joalheiro), necessário para criar |cFFa335eePantera do Cristal de Caos|r"
 L["Wolf Saddle"] = "|cFFFFFFFFSela de Lobo|r"
 L["Wolf Saddle Note"] =
-"Pegue o item. Você deve ter pelo menos |cFF0070DD 1 máscara ativa|r. |cFFa335eeArnês da Mãe da Matilha Marcada pelo Caos|r"
+"Pegue o item. Você deve ter pelo menos |cFF0070DD1 máscara ativa|r. |cFFa335eeArnês da Mãe da Matilha Marcada pelo Caos|r"
 L["Wolf Tack"] = "|cFFFFFFFFAcessórios de Lobo|r"
 L["Wolf Tack Note"] =
-"Pegue o item. Você deve ter pelo menos |cFF0070DD 1 máscara ativa|r. |cFFa335eeArnês da Mãe da Matilha Marcada pelo Caos|r"
+"Pegue o item. Você deve ter pelo menos |cFF0070DD1 máscara ativa|r. |cFFa335eeArnês da Mãe da Matilha Marcada pelo Caos|r"
 L["Wolf Rug"] = "|cFFFFFFFFTapete de Lobo|r"
 L["Wolf Rug Note"] =
 "Colete Sela de Lobo e Acessórios de Lobo. Você deve ter pelo menos |cFF0070DD1 máscara ativa|r. Em seguida, ative o Tapete de Lobo para obter |cFFa335eeArnês da Mãe da Matilha Marcada pelo Caos|r"
 L["Valley of Wisdom Elevator"] = "|cFFFFFFFFMantícora Marcada pelo Caos|r"
 L["Valley of Wisdom Elevator Note"] =
-"Limpe o Vale da Sabedoria. Você deve ter pelo menos |cFF0070DD 2 máscaras ativas|r. Depois pegue o elevador até o último andar. |cFFa335eeMantícora Marcada pelo Caos|r"
+"Limpe o Vale da Sabedoria. Você deve ter pelo menos |cFF0070DD2 máscaras ativas|r. Depois pegue o elevador até o último andar. |cFFa335eeMantícora Marcada pelo Caos|r"
 L["Gain"] = "|cFFFFFFFFEspírito de Urso|r"
 L["Gain Note"] = "Aceleração aumentada em 10%."
 L["Gain 2"] = "|cFFFFFFFFBaluarte Recíproco|r"
