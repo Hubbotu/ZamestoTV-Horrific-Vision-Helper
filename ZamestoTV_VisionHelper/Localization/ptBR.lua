@@ -12,7 +12,7 @@ L["Cursed Horseshoe Note"] =
 "Colete 4 Ferraduras Amaldiçoadas, precisa de pelo menos |cFFDC143C1 máscara ativa|r para obter as |cFFa335eeRédeas do Garanhão Marcado pelo Caos|r"
 L["Magic-Lined Manifold"] = "|cFFFFFFFFColetor Forrado com Magia|r"
 L["Magic-Lined Manifold Note"] =
-"|cFFDC143CSistema de Escapamento de Mortecicleta:|r Pegue a caixa perto da entrada da casa de leilões, você ter pelo menos 1 máscara ativa. |cFFa335eeMortecicleta do Aníquilus|r"
+"|cFFDC143CSistema de Escapamento de Mortecicleta:|r Pegue a caixa perto da entrada da casa de leilões, você deve ter pelo menos 1 máscara ativa. |cFFa335eeMortecicleta do Aníquilus|r"
 L["Trash"] = "|cFFFFFFFFLixo|r"
 L["Trash Note"] =
 "|cFFDC143CEnxamito Aninhado:|r Há uma chance de invocar um monstro raro. |cFFa335eeEnxamito Aninhado|r"
