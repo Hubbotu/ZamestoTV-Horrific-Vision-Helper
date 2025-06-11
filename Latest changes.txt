@@ -54,9 +54,13 @@ Updated frFR localization (thanks to Lightuky)
 Updated zhCN localization (thanks to nanjuekaien1)
 Fixed the "Chests and Crystals" module, now it displays everything correctly.
 
-# V 3.8.3 - Coming Soon
+# V 3.8.3 - 11.06.2025
 Добавлена локализация koKR (спасибо seanoh1989)
 Обновлена локализация ptBR (спасибо jezuix)
+Исправлена проблема шрифтов для большинства языков.
 
 Add koKR localization (thanks to seanoh1989)
 Updated ptBR localization (thanks to jezuix)
+Fixed font issue for most languages.
+
+# V 3.8.4 - Coming Soon
