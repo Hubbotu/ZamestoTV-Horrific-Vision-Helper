@@ -81,19 +81,6 @@ local localization = {
         ["The Drag"] = "Varcolargo",
         ["Valley of Honor"] = "Valle dell'Onore",
     },
-    ["koKR"] = {
-        ["OddCrystal"] = "기이한 수정",
-        ["Cathedral Square"] = "대성당 광장",
-        ["Dwarven District"] = "드워프 지구",
-        ["Old Town"] = "구 시가지",
-        ["Trade District"] = "상업 지구",
-        ["Mage Quarter"] = "마법사 지구",
-        ["Valley of Strength"] = "힘의 골짜기",
-        ["Valley of Spirits"] = "영혼의 골짜기",
-        ["Valley of Wisdom"] = "지혜의 골짜기",
-        ["The Drag"] = "골목길",
-        ["Valley of Honor"] = "명예의 골짜기",
-    },
     ["ptBR"] = {
         ["OddCrystal"] = "Cristal Estranho",
         ["Cathedral Square"] = "Praça da Catedral",
@@ -132,6 +119,19 @@ local localization = {
         ["Valley of Wisdom"] = "智慧谷",
         ["The Drag"] = "暗巷區",
         ["Valley of Honor"] = "榮譽谷",
+    },
+    ["koKR"] = {
+        ["OddCrystal"] = "기이한 수정",
+        ["Cathedral Square"] = "대성당 광장",
+        ["Dwarven District"] = "드워프 지구",
+        ["Old Town"] = "구 시가지",
+        ["Trade District"] = "상업 지구",
+        ["Mage Quarter"] = "마법사 지구",
+        ["Valley of Speed"] = "힘의 골짜기",
+        ["Valley of Spirits"] = "정령의 골짜기",
+        ["Valley of Wisdom"] = "지혜의 골짜기",
+        ["The Drag"] = "골목길",
+        ["Valley of Honor"] = "명예의 골짜기",
     },
     ["zhCN"] = {
         ["OddCrystal"] = "怪异水晶",
@@ -207,7 +207,7 @@ local visions = {
             {55.64, 31.64}, {65.45, 52.98}, {72.98, 43.65}, {66.04, 23.39},
         },
         { -- Old Town
-            {66.16, 56.74}, {78.24, 75.93}, {85.89, 64.28}, {75.85, 47.50},
+            {66.16, 56.74}, {78.24, 75.93}, {85.89, 64.28}, {77.85, 47.50},
         },
         { -- Trade District
             {54.93, 67.32}, {61.62, 82.93}, {71.66, 73.60}, {64.49, 59.07},
@@ -297,20 +297,20 @@ local function CreateProgressBar(index, name, total, isCrystal)
     local nameText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     nameText:SetPoint("RIGHT", frame, "RIGHT", -60, 0)
     nameText:SetTextColor(1, 0.81960791349411, 0, 1)
-    nameText:SetFont("Fonts\\FRIZQT__.TTF", 16, "OUTLINE")
+    nameText:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", 16, "OUTLINE")
     nameText:SetText(name)
     
     local valueText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     valueText:SetPoint("CENTER", frame, "CENTER", 0, 0)
     valueText:SetTextColor(1, 1, 1, 1)
-    valueText:SetFont("Fonts\\FRIZQT__.TTF", 18, "OUTLINE")
+    valueText:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", 18, "OUTLINE")
     valueText:SetText("0/" .. total)
     
     local iconText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     local yOffset = isCrystal and (index == 1 and 5 or 3) or (index == 1 and 5 or 3)
     iconText:SetPoint("BOTTOM", frame, "TOP", 0, yOffset)
     iconText:SetTextColor(1, 1, 1, 1)
-    iconText:SetFont("Fonts\\FRIZQT__.TTF", 28, "OUTLINE")
+    iconText:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", 28, "OUTLINE")
     iconText:SetText(isCrystal and (index == 1 and "|A:poi-nzothpylon:0:0|a" or "") or
                      (index == 1 and "|A:delves-scenario-treasure-available:0:0|a" or ""))
     

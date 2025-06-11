@@ -40,7 +40,6 @@ Localization/ptBR.lua
 Localization/frFR.lua
 Localization/zhCN.lua
 Localization/zhTW.lua
-Localization/koKR.lua
 
 handler.lua
 config.lua

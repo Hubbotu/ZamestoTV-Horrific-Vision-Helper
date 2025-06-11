@@ -66,13 +66,7 @@ HVT.giftExpiration = 0
 
 -- Localization
 HVT.locale = GetLocale()
-HVT.kind = HVT.locale == "koKR" and {
-    "|cff6A84BC독|r",        -- Poison
-    "|cffFFFFFF브레스|r",     -- Breath Fire
-    "|cffFFFFFF회복|r",      -- Healing
-    "|cffFFFFFF방어|r",      -- Defensive
-    "|cffF0FF00이성|r"       -- Sanity
-} or HVT.locale == "zhCN" and {
+HVT.kind = HVT.locale == "zhCN" and {
     "|cff6A84BC毒药|r",      -- Poison
     "|cffFFFFFF龙息|r",      -- Breath Fire
     "|cffFFFFFF回血|r",      -- Healing
@@ -86,7 +80,7 @@ HVT.kind = HVT.locale == "koKR" and {
     "|cffF0FF00理智|r" -- Sanity    
 } or HVT.locale == "ruRU" and {
     "|cff6A84BCЯд|r",        -- Poison
-    "|cffFF7373Огн. дыхание|r", -- Breath Fire
+    "|cffFF7373Дыхание|r", -- Breath Fire
     "|cffFFAA6CИсцеление|r",  -- Healing
     "|cff6CFFFDЗащита|r",     -- Defensive
     "|cffF0FF00Рассудок|r"    -- Sanity
@@ -126,7 +120,7 @@ HVT.strings = HVT.locale == "ruRU" and {
     ["Green"] = "Зелёный",
     ["Red"] = "Красный",
     ["Blue"] = "Синий",
-    ["Purple"] = "Фиолетовый",
+    ["Purple"] = "Фиолет.",
     ["Time left initial"] = "Оставшееся время: Н/Д",
     ["Sanity initial"] = "Рассудок: 0",
     ["Sanity loss from hits initial"] = "Потеря рассудка от ударов: 0"
@@ -154,18 +148,6 @@ HVT.strings = HVT.locale == "ruRU" and {
     ["Time left initial"] = "Temps restant : N/A",
     ["Sanity initial"] = "Santé mentale : 0",
     ["Sanity loss from hits initial"] = "Santé mentale perdue suite aux coups : 0"
-} or HVT.locale == "koKR" and  {
-    ["Time left"] = "남은 시간：%s",
-    ["Sanity"] = "이성: %d",
-    ["Sanity loss from hits"] = "맞아서 잃은 이성: %d",
-    ["Black"] = "검정",
-    ["Green"] = "초록",
-    ["Red"] = "빨강",
-    ["Blue"] = "파랑",
-    ["Purple"] = "보라",
-    ["Time left initial"] = "남은 시간: N/A",
-    ["Sanity initial"] = "이성: 0",
-    ["Sanity loss from hits initial"] = "맞아서 잃은 이성: 0"
 } or HVT.locale == "zhCN" and  {
     ["Time left"] = "剩余时间：%s",
     ["Sanity"] = "理智: %d",
@@ -327,7 +309,7 @@ function HVT:CreateIcon(id, data)
     
     local label = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     label:SetPoint("BOTTOM", f, "BOTTOM", 0, -4)
-    label:SetFont("Fonts\\Arial.TTF", 16, "OUTLINE")
+    label:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", 13, "OUTLINE")
     label:SetTextColor(unpack(data.color or {1, 1, 1, 1}))
     label:SetText(data.label or "")
     f.label = label
@@ -339,7 +321,7 @@ end
 function HVT:CreateText(id, x, y, text, size, color)
     local f = HVT.frame:CreateFontString("HVT_" .. id, "OVERLAY", "GameFontNormal")
     f:SetPoint("LEFT", HVT.frame, "CENTER", x, y)
-    f:SetFont("Fonts\\Arial.TTF", size or 16, "OUTLINE")
+    f:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", size or 13, "OUTLINE")
     f:SetTextColor(unpack(color or {1, 1, 1, 1}))
     f:SetText(text)
     HVT.frames[id] = f
@@ -377,7 +359,7 @@ function HVT:CreateColorButton(id, x, y)
     
     local text = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     text:SetPoint("LEFT", f, "LEFT", 0, 0)
-    text:SetFont("Fonts\\Arial.TTF", 17, "OUTLINE")
+    text:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", 13, "OUTLINE")
     text:SetTextColor(1, 1, 1, 1)
     text:SetText(HVT.strings[id])
     f.text = text

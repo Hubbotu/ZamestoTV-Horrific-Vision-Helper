@@ -38,21 +38,21 @@ end)
 -- Set frame title
 frame.title = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 frame.title:SetPoint("TOP", frame, "TOP", 0, -5)
-frame.title:SetFont("Fonts\\Arial.TTF", 16, "OUTLINE")
+frame.title:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 16, "OUTLINE")
 frame.title:SetTextColor(1, 1, 1, 1)
 frame.title:SetText("Settings Vision Helper")
 
 -- Add Potions 1 inscription
 frame.potionsText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 frame.potionsText:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, -40)
-frame.potionsText:SetFont("Fonts\\Arial.TTF", 16, "OUTLINE")
+frame.potionsText:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 16, "OUTLINE")
 frame.potionsText:SetTextColor(1, 1, 1, 1)
 frame.potionsText:SetText("Potions 1")
 
 -- Add Potions 2 inscription
 frame.potionsText2 = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 frame.potionsText2:SetPoint("LEFT", frame.potionsText, "RIGHT", 20, 0)
-frame.potionsText2:SetFont("Fonts\\Arial.TTF", 16, "OUTLINE")
+frame.potionsText2:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 16, "OUTLINE")
 frame.potionsText2:SetTextColor(1, 1, 1, 1)
 frame.potionsText2:SetText("Potions 2")
 
@@ -64,7 +64,7 @@ button:SetText("S/H")
 
 -- Style button text
 button.text = button:GetFontString()
-button.text:SetFont("Fonts\\Arial.TTF", 14, "OUTLINE")
+button.text:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 14, "OUTLINE")
 button.text:SetTextColor(1, 1, 1, 1)
 
 -- Add tooltip to the /vision button
@@ -94,7 +94,7 @@ button2:SetText("S/H")
 
 -- Style button text
 button2.text = button2:GetFontString()
-button2.text:SetFont("Fonts\\Arial.TTF", 14, "OUTLINE")
+button2.text:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 14, "OUTLINE")
 button2.text:SetTextColor(1, 1, 1, 1)
 
 -- Add tooltip to the /hvp button
@@ -127,7 +127,7 @@ line:SetHeight(1)
 -- Add Chests and Crystals inscription
 frame.chestsText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 frame.chestsText:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, -105)
-frame.chestsText:SetFont("Fonts\\Arial.TTF", 16, "OUTLINE")
+frame.chestsText:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 16, "OUTLINE")
 frame.chestsText:SetTextColor(1, 1, 1, 1)
 frame.chestsText:SetText("Chests and Crystals:")
 
@@ -139,7 +139,7 @@ showButton:SetText("Show")
 
 -- Style button text
 showButton.text = showButton:GetFontString()
-showButton.text:SetFont("Fonts\\Arial.TTF", 14, "OUTLINE")
+showButton.text:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 14, "OUTLINE")
 showButton.text:SetTextColor(1, 1, 1, 1)
 
 -- Add tooltip to the Show button
@@ -169,7 +169,7 @@ hideButton:SetText("Hide")
 
 -- Style button text
 hideButton.text = hideButton:GetFontString()
-hideButton.text:SetFont("Fonts\\Arial.TTF", 14, "OUTLINE")
+hideButton.text:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 14, "OUTLINE")
 hideButton.text:SetTextColor(1, 1, 1, 1)
 
 -- Add tooltip to the Hide button
@@ -195,14 +195,14 @@ end)
 local line2 = frame:CreateTexture(nil, "BORDER")
 line2:SetTexture("Interface\\Buttons\\WHITE8X8")
 line2:SetVertexColor(1, 1, 1, 0.5) -- White with transparency
-line2:SetPoint("TOPLEFT", frame, "TOPLEFT", 4, -155)
-line2:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, -155)
+line2:SetPoint("TOPLEFT", frame, "TOPLEFT", 4, -160)
+line2:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, -160)
 line2:SetHeight(1)
 
 -- Add Masks Equipped inscription
 frame.masksText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
 frame.masksText:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, -165)
-frame.masksText:SetFont("Fonts\\Arial.TTF", 16, "OUTLINE")
+frame.masksText:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 16, "OUTLINE")
 frame.masksText:SetTextColor(1, 1, 1, 1)
 frame.masksText:SetText("Masks Equipped: 0")
 
