@@ -535,34 +535,38 @@ eventFrame:SetScript("OnEvent", function(self, event, ...)
         ZMON_SavedVars = ZMON_SavedVars or {}
         state.isFrozen = ZMON_SavedVars.isFrozen or false
         -- UI already initialized at startup
-    elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED" then
-        local mapID = C_Map.GetBestMapForUnit("player")
-        if state.uiFrame then
-            if not state.isFrozen and mapID and (mapID == 2403 or mapID == 2404 or mapID == 1469 or mapID == 1470) then
-                UpdateBarsForMap(mapID) -- Update bars for the current map
-                state.uiFrame:Show()
-                state.uiFrame:SetBackdrop({
-                    tile = true, tileSize = 16, edgeSize = 16,
-                    insets = { left = 4, right = 4, top = 4, bottom = 4 },
-                })
-                state.uiFrame:SetBackdropColor(1, 1, 1, 0.5)
-                state.uiFrame:SetBackdropBorderColor(0, 0, 0, 1)
-                state.uiFrame:EnableMouse(true)
-                for _, bar in pairs(state.bars) do
-                    bar:EnableMouse(true)
-                    bar:Show()
-                end
-                if _G[addonName .. "ResetButton"] then _G[addonName .. "ResetButton"]:Show() end
-                if _G[addonName .. "CloseButton"] then _G[addonName .. "CloseButton"]:Show() end
-            else
-                state.uiFrame:Hide()
-                for _, bar in pairs(state.bars) do
-                    bar:Hide()
-                end
-                if _G[addonName .. "ResetButton"] then _G[addonName .. "ResetButton"]:Hide() end
-                if _G[addonName .. "CloseButton"] then _G[addonName .. "CloseButton"]:Hide() end
+elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED" then
+    local mapID = C_Map.GetBestMapForUnit("player")
+
+    -- Only update bars if not frozen and they haven't been initialized yet
+    if not state.isFrozen and state.uiFrame then
+        if mapID and (mapID == 2403 or mapID == 2404 or mapID == 1469 or mapID == 1470) then
+            -- Only initialize if state.bars is empty (i.e. not yet created)
+            if next(state.bars) == nil then
+                UpdateBarsForMap(mapID)
             end
+
+            state.uiFrame:Show()
+            state.uiFrame:SetBackdrop({
+                tile = true, tileSize = 16, edgeSize = 16,
+                insets = { left = 4, right = 4, top = 4, bottom = 4 },
+            })
+            state.uiFrame:SetBackdropColor(1, 1, 1, 0.5)
+            state.uiFrame:SetBackdropBorderColor(0, 0, 0, 1)
+            state.uiFrame:EnableMouse(true)
+
+            for _, bar in pairs(state.bars) do
+                bar:EnableMouse(true)
+                bar:Show()
+            end
+
+            if _G[addonName .. "ResetButton"] then _G[addonName .. "ResetButton"]:Show() end
+            if _G[addonName .. "CloseButton"] then _G[addonName .. "CloseButton"]:Show() end
+        else
+            -- If out of vision zone, do NOT reset, do NOT hide bars
+            -- Leave current UI state as-is
         end
+    end
     elseif event == "UNIT_SPELLCAST_START" then
         local unit, _, spellID = ...
         if spellID == 143394 then
