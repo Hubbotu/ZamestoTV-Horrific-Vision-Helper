@@ -63,4 +63,9 @@ Add koKR localization (thanks to seanoh1989)
 Updated ptBR localization (thanks to jezuix)
 Fixed font issue for most languages.
 
-# V 3.8.4 - Coming Soon
+# V 3.8.4 - 16.06.2025
+Исправлено самопроизвольное сбрасывание данных.
+
+Fixed spontaneous data reset.
+
+# V 3.8.5 - Coming Soon
