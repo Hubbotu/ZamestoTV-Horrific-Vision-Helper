@@ -297,20 +297,20 @@ local function CreateProgressBar(index, name, total, isCrystal)
     local nameText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     nameText:SetPoint("RIGHT", frame, "RIGHT", -60, 0)
     nameText:SetTextColor(1, 0.81960791349411, 0, 1)
-    nameText:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", 16, "OUTLINE")
+    nameText:SetFont(nameText:GetFont(), 16, "OUTLINE")
     nameText:SetText(name)
     
     local valueText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     valueText:SetPoint("CENTER", frame, "CENTER", 0, 0)
     valueText:SetTextColor(1, 1, 1, 1)
-    valueText:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", 18, "OUTLINE")
+    valueText:SetFont(valueText:GetFont(), 18, "OUTLINE")
     valueText:SetText("0/" .. total)
     
     local iconText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     local yOffset = isCrystal and (index == 1 and 5 or 3) or (index == 1 and 5 or 3)
     iconText:SetPoint("BOTTOM", frame, "TOP", 0, yOffset)
     iconText:SetTextColor(1, 1, 1, 1)
-    iconText:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", 28, "OUTLINE")
+    iconText:SetFont(iconText:GetFont(), 28, "OUTLINE")
     iconText:SetText(isCrystal and (index == 1 and "|A:poi-nzothpylon:0:0|a" or "") or
                      (index == 1 and "|A:delves-scenario-treasure-available:0:0|a" or ""))
     
@@ -535,38 +535,38 @@ eventFrame:SetScript("OnEvent", function(self, event, ...)
         ZMON_SavedVars = ZMON_SavedVars or {}
         state.isFrozen = ZMON_SavedVars.isFrozen or false
         -- UI already initialized at startup
-elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED" then
-    local mapID = C_Map.GetBestMapForUnit("player")
+    elseif event == "PLAYER_ENTERING_WORLD" or event == "ZONE_CHANGED" then
+        local mapID = C_Map.GetBestMapForUnit("player")
 
-    -- Only update bars if not frozen and they haven't been initialized yet
-    if not state.isFrozen and state.uiFrame then
-        if mapID and (mapID == 2403 or mapID == 2404 or mapID == 1469 or mapID == 1470) then
-            -- Only initialize if state.bars is empty (i.e. not yet created)
-            if next(state.bars) == nil then
-                UpdateBarsForMap(mapID)
+        -- Only update bars if not frozen and they haven't been initialized yet
+        if not state.isFrozen and state.uiFrame then
+            if mapID and (mapID == 2403 or mapID == 2404 or mapID == 1469 or mapID == 1470) then
+                -- Only initialize if state.bars is empty (i.e. not yet created)
+                if next(state.bars) == nil then
+                    UpdateBarsForMap(mapID)
+                end
+
+                state.uiFrame:Show()
+                state.uiFrame:SetBackdrop({
+                    tile = true, tileSize = 16, edgeSize = 16,
+                    insets = { left = 4, right = 4, top = 4, bottom = 4 },
+                })
+                state.uiFrame:SetBackdropColor(1, 1, 1, 0.5)
+                state.uiFrame:SetBackdropBorderColor(0, 0, 0, 1)
+                state.uiFrame:EnableMouse(true)
+
+                for _, bar in pairs(state.bars) do
+                    bar:EnableMouse(true)
+                    bar:Show()
+                end
+
+                if _G[addonName .. "ResetButton"] then _G[addonName .. "ResetButton"]:Show() end
+                if _G[addonName .. "CloseButton"] then _G[addonName .. "CloseButton"]:Show() end
+            else
+                -- If out of vision zone, do NOT reset, do NOT hide bars
+                -- Leave current UI state as-is
             end
-
-            state.uiFrame:Show()
-            state.uiFrame:SetBackdrop({
-                tile = true, tileSize = 16, edgeSize = 16,
-                insets = { left = 4, right = 4, top = 4, bottom = 4 },
-            })
-            state.uiFrame:SetBackdropColor(1, 1, 1, 0.5)
-            state.uiFrame:SetBackdropBorderColor(0, 0, 0, 1)
-            state.uiFrame:EnableMouse(true)
-
-            for _, bar in pairs(state.bars) do
-                bar:EnableMouse(true)
-                bar:Show()
-            end
-
-            if _G[addonName .. "ResetButton"] then _G[addonName .. "ResetButton"]:Show() end
-            if _G[addonName .. "CloseButton"] then _G[addonName .. "CloseButton"]:Show() end
-        else
-            -- If out of vision zone, do NOT reset, do NOT hide bars
-            -- Leave current UI state as-is
         end
-    end
     elseif event == "UNIT_SPELLCAST_START" then
         local unit, _, spellID = ...
         if spellID == 143394 then
