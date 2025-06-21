@@ -68,7 +68,7 @@ Fixed font issue for most languages.
 
 Fixed spontaneous data reset.
 
-# V 3.8.5 - Coming Soon
+# V 3.8.5 - 21.06.2025
 Исправлена проблема с китайским и корейскими языками.
 
 Fixed issue with Chinese and Korean languages.
