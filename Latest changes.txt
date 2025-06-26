@@ -73,4 +73,9 @@ Fixed spontaneous data reset.
 
 Fixed issue with Chinese and Korean languages.
 
+# V 3.8.6 - 26.06.2025
+Исправлена проблема с китайским и корейскими языками.
+
+Fixed issue with Chinese and Korean languages.
+
 # V 3.8.6 - Coming Soon
