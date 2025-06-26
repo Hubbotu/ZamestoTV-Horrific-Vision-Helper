@@ -309,7 +309,7 @@ function HVT:CreateIcon(id, data)
     
     local label = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     label:SetPoint("BOTTOM", f, "BOTTOM", 0, -4)
-    label:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", 13, "OUTLINE")
+    label:SetFont(label:GetFont(), 13, "OUTLINE")
     label:SetTextColor(unpack(data.color or {1, 1, 1, 1}))
     label:SetText(data.label or "")
     f.label = label
@@ -321,7 +321,7 @@ end
 function HVT:CreateText(id, x, y, text, size, color)
     local f = HVT.frame:CreateFontString("HVT_" .. id, "OVERLAY", "GameFontNormal")
     f:SetPoint("LEFT", HVT.frame, "CENTER", x, y)
-    f:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", size or 13, "OUTLINE")
+    f:SetFont(f:GetFont(), size or 13, "OUTLINE")
     f:SetTextColor(unpack(color or {1, 1, 1, 1}))
     f:SetText(text)
     HVT.frames[id] = f
@@ -359,7 +359,7 @@ function HVT:CreateColorButton(id, x, y)
     
     local text = f:CreateFontString(nil, "OVERLAY", "GameFontNormal")
     text:SetPoint("LEFT", f, "LEFT", 0, 0)
-    text:SetFont("Interface\\AddOns\\"..addonName.."\\Literata.ttf", 13, "OUTLINE")
+    text:SetFont(text:GetFont(), 13, "OUTLINE")
     text:SetTextColor(1, 1, 1, 1)
     text:SetText(HVT.strings[id])
     f.text = text
