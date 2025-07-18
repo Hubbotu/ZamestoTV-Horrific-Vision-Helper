@@ -5,7 +5,6 @@
 Отображени местопложения начального флакона с ядом.
 Обновлена локализация zhCN и zhTW (спасибо nanjuekaien1) и frFR (спасибо Lightuky)
 Улучшена русская локализация
-
 Fixed Wolf Rug location
 Added Void-Forged Engine Block location
 Displays the location of the initial poison vial.
@@ -16,7 +15,6 @@ Improved Russian localization
 Обновлена локализация zhCN (спасибо nanjuekaien1) and zhTW (спасибо BlueNightSky)
 Добавлены места появления Письмоеда
 Написан с нуля модуль "Сундуки и Кристаллы", с поддержкой всех языков.
-
 Updated zhCN localization (thanks to nanjuekaien1) и zhTW (thanks BlueNightSky)
 Added Mail Muncher spawn locations
 The "Chests and Crystals" module was written from scratch, with support for all languages.
@@ -26,7 +24,6 @@ The "Chests and Crystals" module was written from scratch, with support for all 
 Местоположение Безликая маска возмездия
 Местоположение Безликая маска заклятого врага
 Изменена иконка для отображения начального яда.
-
 Updated frFR localization (thanks to Lightuky)
 Location Faceless Mask of Vengeance
 Location Faceless Mask of the Nemesis
@@ -38,7 +35,6 @@ Changed the icon for displaying the initial poison.
 Исправлено отображения фрема Сундуки и Кристаллы.
 Теперь фрем Сундуки и Кристаллы отображаеться ТОЛЬКО в видениях.
 Местоположение Странных кристаллов.
-
 Updated zhCN localization (thanks to nanjuekaien1)
 Changed the icon for displaying the initial poison.
 Fixed display of Chests and Crystals frame.
@@ -49,7 +45,6 @@ Location of Odd Crystal
 Обновлена локализация frFR (спасибо Lightuky)
 Обновлена локализация zhCN (спасибо nanjuekaien1)
 Исправлен модуль "Сундуки и Кристаллы", теперь отображает все правильно.
-
 Updated frFR localization (thanks to Lightuky)
 Updated zhCN localization (thanks to nanjuekaien1)
 Fixed the "Chests and Crystals" module, now it displays everything correctly.
@@ -58,24 +53,24 @@ Fixed the "Chests and Crystals" module, now it displays everything correctly.
 Добавлена локализация koKR (спасибо seanoh1989)
 Обновлена локализация ptBR (спасибо jezuix)
 Исправлена проблема шрифтов для большинства языков.
-
 Add koKR localization (thanks to seanoh1989)
 Updated ptBR localization (thanks to jezuix)
 Fixed font issue for most languages.
 
 # V 3.8.4 - 16.06.2025
 Исправлено самопроизвольное сбрасывание данных.
-
 Fixed spontaneous data reset.
 
 # V 3.8.5 - 21.06.2025
 Исправлена проблема с китайским и корейскими языками.
-
 Fixed issue with Chinese and Korean languages.
 
 # V 3.8.6 - 26.06.2025
 Исправлена проблема с китайским и корейскими языками.
-
 Fixed issue with Chinese and Korean languages.
 
-# V 3.8.6 - Coming Soon
+# V 3.8.7 - 18.07.2025
+Добавлен трекер остальных странных кристаллов (спасибо mebenal)
+Added tracker for other Odd Crystals (thanks to mebenal)
+
+# V 3.8.8 - Coming Soon
