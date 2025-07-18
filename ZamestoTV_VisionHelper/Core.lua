@@ -149,6 +149,19 @@ local localization = {
 }
 local oddCrystalName = localization[locale]["OddCrystal"] or "Odd Crystal"
 
+-- Odd Crystal IDs
+local oddCrystalIds = {
+    "341367",
+    "341368",
+    "341369",
+    "341370",
+    "341371",
+    "341372",
+    "341373",
+    "341374",
+    "341375",
+    "341376"
+}
 -- Map and zone data
 local names = {
     [1469] = {
@@ -575,9 +588,14 @@ eventFrame:SetScript("OnEvent", function(self, event, ...)
                 state.crystal = true
                 return
             end
-            local interact = UnitGUID("softinteract")
-            if interact and select(6, strsplit("-", interact)) == "341367" then
-                state.crystal = true
+            local interact = (select(6, strsplit("-", UnitGUID("softinteract"))))
+            if interact then
+                for _, value in ipairs(oddCrystalIds) do
+                    if interact == value then
+                        state.crystal = true
+                        return
+                    end
+                end
             end
         end
     elseif event == "UNIT_SPELLCAST_SUCCEEDED" then
