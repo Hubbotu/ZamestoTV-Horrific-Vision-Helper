@@ -14,7 +14,7 @@
 ## Author: ZamestoTV
 ## IconTexture: Interface\AddOns\ZamestoTV_VisionHelper\Icons\goblin
 ## Version: 3.8.7
-## SavedVariables: HVTDB, ZamestoTV_Settings, HorrificVisionTrackerDB, ZamestoTV_VisionHelperDB, AVNS_SavedVars, state, ZMON_SavedVars
+## SavedVariables: HVTDB, ZamestoTV_Settings, HorrificVisionTrackerDB, ZamestoTV_VisionHelperDB, AVNS_SavedVars, state, ZMON_SavedVars, NemesisConfig
 ## SavedVariablesPerCharacter: TrakPos
 ## X-Category: Map
 ## X-Localizations: enUS, frFR, ruRU, ptBR, zhCN, zhTW
@@ -49,3 +49,5 @@ Core.lua
 Auto.lua
 Vision2.lua
 SettingsFrame.lua
+
+Nemessis.lua
