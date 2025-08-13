@@ -588,12 +588,15 @@ eventFrame:SetScript("OnEvent", function(self, event, ...)
                 state.crystal = true
                 return
             end
-            local interact = (select(6, strsplit("-", UnitGUID("softinteract"))))
-            if interact then
-                for _, value in ipairs(oddCrystalIds) do
-                    if interact == value then
-                        state.crystal = true
-                        return
+            local guid = UnitGUID("softinteract")
+            if guid then
+                local interact = (select(6, strsplit("-", guid)))
+                if interact then
+                    for _, value in ipairs(oddCrystalIds) do
+                        if interact == value then
+                            state.crystal = true
+                            return
+                        end
                     end
                 end
             end
