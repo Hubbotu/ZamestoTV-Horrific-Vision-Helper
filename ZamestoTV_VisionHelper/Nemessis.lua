@@ -48,7 +48,7 @@ function NemesisAvoid:CreateIcon(unit)
     frame:SetPoint("BOTTOM", nameplate, "TOP", 0, -16)
 
     local ring = frame:CreateTexture(nil, "OVERLAY")
-    ring:SetTexture("Interface\\AddOns\\ZamestoTV_VisionHelper\\Icons\\Ring.tga")
+    ring:SetTexture("Interface\\AddOns\\ZamestoTV_VisionHelper\\Icons\\Ring1.tga")
     ring:SetAllPoints()
     ring:SetVertexColor(1, 0.12, 0.23, 1)
 
@@ -84,7 +84,7 @@ end
 -- Add slash command to toggle mute
 SLASH_NEMESISAVOID1 = "/nemesis"
 SlashCmdList["NEMESISAVOID"] = function(msg)
-    if not NemesisConfig then NemesisConfig = {} end
+    
     NemesisConfig.isMuted = not NemesisConfig.isMuted
     print("Nemesis sound mute is now:", NemesisConfig.isMuted and "ON" or "OFF")
     if NemesisConfig.isMuted then

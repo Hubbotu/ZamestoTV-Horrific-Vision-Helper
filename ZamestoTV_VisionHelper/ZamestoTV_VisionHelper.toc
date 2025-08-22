@@ -1,4 +1,4 @@
-## Interface: 110107
+## Interface: 110200
 ## Title: Horrific Vision Helper
 ## Title-ruRU: Помощник по Видениям
 ## Title-ptBR: Horrific Vision Helper
