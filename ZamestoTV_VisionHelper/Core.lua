@@ -580,9 +580,14 @@ eventFrame:SetScript("OnEvent", function(self, event, ...)
                 -- Leave current UI state as-is
             end
         end
-    elseif event == "UNIT_SPELLCAST_START" then
+elseif event == "UNIT_SPELLCAST_START" then
         local unit, _, spellID = ...
-        if spellID == 143394 then
+        if not spellID then return end
+        
+        -- Хак для Midnight: преобразуем "secret value" в строку, а затем в число
+        local sID = tonumber(tostring(spellID))
+        
+        if sID == 143394 then
             local tooltip = C_TooltipInfo.GetWorldCursor()
             if tooltip and tooltip.lines and tooltip.lines[1].leftText:match(oddCrystalName) then
                 state.crystal = true
@@ -593,7 +598,7 @@ eventFrame:SetScript("OnEvent", function(self, event, ...)
                 local interact = (select(6, strsplit("-", guid)))
                 if interact then
                     for _, value in ipairs(oddCrystalIds) do
-                        if interact == value then
+                        if tonumber(interact) == tonumber(value) then
                             state.crystal = true
                             return
                         end
@@ -603,14 +608,19 @@ eventFrame:SetScript("OnEvent", function(self, event, ...)
         end
     elseif event == "UNIT_SPELLCAST_SUCCEEDED" then
         local unit, _, spellID = ...
-        if spellID == 306608 then
+        if not spellID then return end
+        
+        -- Аналогичное преобразование здесь
+        local sID = tonumber(tostring(spellID))
+        
+        if sID == 306608 then
             state.chestOpened = true
-        elseif spellID == 143394 and state.crystal then
+        elseif sID == 143394 and state.crystal then
             local quartal = GetLocation()
             local key = quartal and format("%s-crystal", quartal)
             if quartal and state.bars[key] then
                 UpdateProgressBar(state.bars[key], state.bars[key].value + 1)
-                C_ChatInfo.SendAddonMessage("TVISIONS_LOOT", format("%s*%s*%s", quartal, UnitGUID("player"), key), "INSTANCE_CHAT")
+                C_ChatInfo.SendAddonMessage("TVVISIONS_LOOT", format("%s*%s*%s", quartal, UnitGUID("player"), key), "INSTANCE_CHAT")
                 state.crystal = false
             end
         end
