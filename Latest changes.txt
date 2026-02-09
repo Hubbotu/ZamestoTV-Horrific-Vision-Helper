@@ -77,4 +77,6 @@ Added tracker for other Odd Crystals (thanks to mebenal)
 Безликая маска заклятого врага - отображает заклятого врага. Обновлен до версии 11.2
 Faceless Mask of the Nemesis - displays Nemesis. Updated to version 11.2
 
-# V 3.8.9 - Coming Soon
+# V 3.9.4 - 09.02.2026
+Исправлены ошибки, теперь аддон полностью работает в Midnight
+Bugs have been fixed, now the addon fully works in Midnight
