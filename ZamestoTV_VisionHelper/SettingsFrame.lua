@@ -23,7 +23,7 @@ frame:Hide() -- Hide frame by default at creation
 -- Set background texture
 local bg = frame:CreateTexture(nil, "BACKGROUND")
 bg:SetTexture("Interface\\Buttons\\WHITE8X8")
-bg:SetVertexColor(0.1, 0.1, 0.1, 0.8) -- Dark gray with slight transparency
+bg:SetVertexColor(0.1, 0.1, 0.1, 0.8)
 bg:SetPoint("TOPLEFT", 4, -4)
 bg:SetPoint("BOTTOMRIGHT", -4, 4)
 
@@ -42,51 +42,14 @@ frame.title:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 16, 
 frame.title:SetTextColor(1, 1, 1, 1)
 frame.title:SetText("Settings Vision Helper")
 
--- Add Potions 1 inscription
-frame.potionsText = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-frame.potionsText:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, -40)
-frame.potionsText:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 16, "OUTLINE")
-frame.potionsText:SetTextColor(1, 1, 1, 1)
-frame.potionsText:SetText("Potions 1")
-
--- Add Potions 2 inscription
+-- Add Potions 2 inscription (now the first potions row)
 frame.potionsText2 = frame:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-frame.potionsText2:SetPoint("LEFT", frame.potionsText, "RIGHT", 20, 0)
+frame.potionsText2:SetPoint("TOPLEFT", frame, "TOPLEFT", 20, -40)
 frame.potionsText2:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 16, "OUTLINE")
 frame.potionsText2:SetTextColor(1, 1, 1, 1)
 frame.potionsText2:SetText("Potions 2")
 
--- Create S/H button for /vision (below Potions 1)
-local button = CreateFrame("Button", "AVNS_SettingsButton", frame, "UIPanelButtonTemplate")
-button:SetSize(60, 25)
-button:SetPoint("TOPLEFT", frame.potionsText, "BOTTOMLEFT", 0, -10)
-button:SetText("S/H")
-
--- Style button text
-button.text = button:GetFontString()
-button.text:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 14, "OUTLINE")
-button.text:SetTextColor(1, 1, 1, 1)
-
--- Add tooltip to the /vision button
-button:SetScript("OnEnter", function(self)
-    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-    GameTooltip:SetText("Hide/Show\nToggles visibility using /vision")
-    GameTooltip:Show()
-end)
-button:SetScript("OnLeave", function()
-    GameTooltip:Hide()
-end)
-
--- Button click to run /vision command
-button:SetScript("OnClick", function()
-    if SlashCmdList and SlashCmdList["HVT"] then
-        SlashCmdList["HVT"]("")
-    else
-        print("Error: /vision command not found. Ensure ZamestoTV_VisionHelper is enabled.")
-    end
-end)
-
--- Create S/H button for /hvp (below Potions 2)
+-- Create S/H button for /hvp (now positioned under Potions 2)
 local button2 = CreateFrame("Button", "AVNS_SettingsButton_HVP", frame, "UIPanelButtonTemplate")
 button2:SetSize(60, 25)
 button2:SetPoint("TOPLEFT", frame.potionsText2, "BOTTOMLEFT", 0, -10)
@@ -97,7 +60,7 @@ button2.text = button2:GetFontString()
 button2.text:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 14, "OUTLINE")
 button2.text:SetTextColor(1, 1, 1, 1)
 
--- Add tooltip to the /hvp button
+-- Tooltip
 button2:SetScript("OnEnter", function(self)
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
     GameTooltip:SetText("Hide/Show\nToggles visibility using /hvp")
@@ -107,7 +70,7 @@ button2:SetScript("OnLeave", function()
     GameTooltip:Hide()
 end)
 
--- Button click to run /hvp command
+-- Click action
 button2:SetScript("OnClick", function()
     if SlashCmdList and SlashCmdList["HVP"] then
         SlashCmdList["HVP"]("")
@@ -116,10 +79,10 @@ button2:SetScript("OnClick", function()
     end
 end)
 
--- Add demarcation line
+-- Add demarcation line (moved up since we removed the first row)
 local line = frame:CreateTexture(nil, "BORDER")
 line:SetTexture("Interface\\Buttons\\WHITE8X8")
-line:SetVertexColor(1, 1, 1, 0.5) -- White with transparency
+line:SetVertexColor(1, 1, 1, 0.5)
 line:SetPoint("TOPLEFT", frame, "TOPLEFT", 4, -95)
 line:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -4, -95)
 line:SetHeight(1)
@@ -137,12 +100,10 @@ showButton:SetSize(60, 25)
 showButton:SetPoint("TOPLEFT", frame.chestsText, "BOTTOMLEFT", 0, -10)
 showButton:SetText("Show")
 
--- Style button text
 showButton.text = showButton:GetFontString()
 showButton.text:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 14, "OUTLINE")
 showButton.text:SetTextColor(1, 1, 1, 1)
 
--- Add tooltip to the Show button
 showButton:SetScript("OnEnter", function(self)
     GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
     GameTooltip:SetText("Show chests and crystals")
@@ -152,12 +113,11 @@ showButton:SetScript("OnLeave", function()
     GameTooltip:Hide()
 end)
 
--- Button click to run /zmon command
 showButton:SetScript("OnClick", function()
     if SlashCmdList and SlashCmdList["ZMON"] then
         SlashCmdList["ZMON"]("")
     else
-        print("Error: /zmon command not found. Ensure the addon defining /zmon is enabled.")
+        print("Error: /zmon command not found.")
     end
 end)
 
@@ -166,6 +126,27 @@ local hideButton = CreateFrame("Button", "AVNS_HideButton", frame, "UIPanelButto
 hideButton:SetSize(60, 25)
 hideButton:SetPoint("LEFT", showButton, "RIGHT", 5, 0)
 hideButton:SetText("Hide")
+
+hideButton.text = hideButton:GetFontString()
+hideButton.text:SetFont("Interface\\AddOns\\ZamestoTV_VisionHelper\\front.ttf", 14, "OUTLINE")
+hideButton.text:SetTextColor(1, 1, 1, 1)
+
+hideButton:SetScript("OnEnter", function(self)
+    GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+    GameTooltip:SetText("Hide chests and crystals")
+    GameTooltip:Show()
+end)
+hideButton:SetScript("OnLeave", function()
+    GameTooltip:Hide()
+end)
+
+hideButton:SetScript("OnClick", function()
+    if SlashCmdList and SlashCmdList["ZMOFF"] then
+        SlashCmdList["ZMOFF"]("")
+    else
+        print("Error: /zmoff command not found.")
+    end
+end)
 
 -- Style button text
 hideButton.text = hideButton:GetFontString()

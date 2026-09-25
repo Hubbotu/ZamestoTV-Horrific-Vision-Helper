@@ -1,4 +1,4 @@
-## Interface: 110200
+## Interface: 120100
 ## Title: Horrific Vision Helper
 ## Title-ruRU: Помощник по Видениям
 ## Title-ptBR: Horrific Vision Helper
@@ -13,7 +13,7 @@
 ## Notes-zhTW: 恐怖幻象助手
 ## Author: ZamestoTV
 ## IconTexture: Interface\AddOns\ZamestoTV_VisionHelper\Icons\goblin
-## Version: 3.8.8
+## Version: 3.9.5
 ## SavedVariables: HVTDB, ZamestoTV_Settings, HorrificVisionTrackerDB, ZamestoTV_VisionHelperDB, AVNS_SavedVars, state, ZMON_SavedVars, NemesisConfig
 ## SavedVariablesPerCharacter: TrakPos
 ## X-Category: Map
@@ -44,10 +44,7 @@ Localization/zhTW.lua
 handler.lua
 config.lua
 VisionMap.lua
-Vision.lua
 Core.lua
 Auto.lua
 Vision2.lua
 SettingsFrame.lua
-
-Nemessis.lua
