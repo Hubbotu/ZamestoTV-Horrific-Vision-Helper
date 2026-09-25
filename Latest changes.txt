@@ -80,3 +80,7 @@ Faceless Mask of the Nemesis - displays Nemesis. Updated to version 11.2
 # V 3.9.4 - 09.02.2026
 Исправлены ошибки, теперь аддон полностью работает в Midnight
 Bugs have been fixed, now the addon fully works in Midnight
+
+# V 3.9.5 - 25.09.2026
+Исправлены ошибки, теперь аддон полностью работает в Midnight
+Bugs have been fixed, now the addon fully works in Midnight
